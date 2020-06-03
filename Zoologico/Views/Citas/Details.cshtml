@@ -1,0 +1,61 @@
+﻿@model Zoologico.Models.Citas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+}
+<style>
+
+.label{
+
+ 
+   font-weight:bolder;
+}
+
+</style>
+
+
+<div>
+    <h4 class="text-center">Detalle Cita</h4>
+    <hr />
+    <div class="container">
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td align="right"><label class="label">Hora de Inicio </label></td>
+                    <td>@Html.DisplayFor(model => model.Hora_inicio_Cita)</td>
+                    <td align="right"><label class="label">Hora de Fin</label></td>
+                    <td> @Html.DisplayFor(model => model.Hora_fin_Cita)</td>
+                </tr>
+                <tr>
+                    <td align="right"><label class="label">Nombre del Animal </label></td>
+                    <td> @Html.DisplayFor(model => model.Animales.Nombre_Animal)</td>
+                    <td align="right"><label class="label">Nombre del Veterinario</label></td>
+                    <td>@Html.DisplayFor(model => model.Veterinario.Nombre_Veterinario)</td>
+                </tr>
+                <tr>
+                    <td align="right"><label class="label">Observaciones</label></td>
+                    <td> @Html.DisplayFor(model => model.Observaciones)</td>
+                    <td align="right"><label class="label">Diagnostico</label></td>
+                    <td>@Html.DisplayFor(model => model.Diagnostico_Cita)</td>
+                </tr>
+                <tr>
+                    <td align="right"><label class="label">Codigo</label></td>
+                    <td>@Html.DisplayFor(model => model.Codigo_Cita)</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <a href="@Url.Action("Index", "Citas")" class="btn btn-outline-dark">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Codigo_Cita }, new { @class = "btn btn-outline-info" })
+            </div>
+        </div>
+    </div>
+</div>
+

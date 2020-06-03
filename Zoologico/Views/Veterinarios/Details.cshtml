@@ -1,0 +1,51 @@
+﻿@model Zoologico.Models.Veterinario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Veterinario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Veterinario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Veterinario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido_Veterinario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido_Veterinario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono_Veterinario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono_Veterinario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion_Veterinario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion_Veterinario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Cedula_Veterinario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

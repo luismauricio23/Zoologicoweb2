@@ -1,0 +1,72 @@
+﻿@model Zoologico.Models.Animales
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+}
+ <style>
+ .float{
+margin-left:1000px;
+
+ }
+ .t{
+   margin-bottom:50px;
+   margin-top:-80px;
+   margin-left:55px;  
+ }
+  .label {
+   font-weight: bolder;
+   }
+    </style>
+ <img src="~/Library/Imagenes/warning.png" class="float" height="150" width="150">
+ <div class="alert alert-warning col-md-4 t">
+     <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
+ </div>
+
+<div>
+    <hr />
+    <div class="container">
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td align="right"><label class="label">Codigo</label></td>
+                    <td>  @Html.DisplayFor(model => model.Id_Animal)</td>
+                    <td align="right"><label class="label">Animal</label></td>
+                    <td>@Html.DisplayFor(model => model.Nombre_Animal)</td>
+                </tr>
+                <tr>
+                    <td align="right"><label class="label">Especie </label></td>
+                    <td>  @Html.DisplayFor(model => model.Especie_Animal)</td>
+                    <td align="right"><label class="label">Categoria</label></td>
+                    <td> @Html.DisplayFor(model => model.Categoria_Animal)</td>
+                </tr>
+                <tr>
+                    <td align="right"><label class="label">Edad</label></td>
+                    <td>@Html.DisplayFor(model => model.Edad_Animal)</td>
+                    <td align="right"><label class="label">Descripcion</label></td>
+                    <td> @Html.DisplayFor(model => model.Descripcion_Animal)</td>
+                </tr>
+                <tr>
+                    <td align="right"><label class="label">Nombre Cientifico</label></td>
+                    <td>@Html.DisplayFor(model => model.Nombre_Cientifico_Animal)</td>
+                    <td align="right"><label class="label">Tiempo en Zoologico</label></td>
+                    <td>  @Html.DisplayFor(model => model.Tiempo_Zoologico)</td>
+                </tr>
+                <tr>
+                    <td align="right"><label class="label">Zona</label></td>
+                    <td> @Html.DisplayFor(model => model.Zonas.Nombre_Zona))</td>
+
+                </tr>
+            </tbody>
+        </table>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-outline-dark" />
+                @Html.ActionLink("Regresar", "Index", new { id = Model.Id_Animal }, new { @class = "btn btn-outline-info" })
+            </div>
+        }
+    </div>
+</div>

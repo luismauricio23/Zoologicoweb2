@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Library/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Library/style/main.css" rel="stylesheet" />
+
+    @RenderSection("Css", required: false)
+</head>
+
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Library/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="~/Library/Bootstrap/bootstrap.min.js"></script>
+    <script src="~/Library/Bootstrap/popper.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

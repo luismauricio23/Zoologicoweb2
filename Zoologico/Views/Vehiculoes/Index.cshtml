@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Zoologico.Models.Vehiculo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_Vehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca_vehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado_Vehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora_Ingreso_vehiculo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_Vehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marca_vehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado_Vehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora_Ingreso_vehiculo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Placa_Vehiculo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Placa_Vehiculo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Placa_Vehiculo })
+        </td>
+    </tr>
+}
+
+</table>

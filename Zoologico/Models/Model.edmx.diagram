@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1e389cf26f1644c3ad709bc4c164adb9" Name="Diagram1">
+        <EntityTypeShape EntityType="ZoologicoWebModel.Animales" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Citas" Width="1.5" PointX="7.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Cliente" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Compra" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Modelo" Width="1.5" PointX="3.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Operacion" Width="1.5" PointX="6" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Parqueadero" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Planes" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Rol" Width="1.5" PointX="6" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Rol_operacion" Width="1.5" PointX="8.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Tiquete" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Trabajadores" Width="1.5" PointX="8.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Vehiculo" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Veterinario" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Zonas" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoWebModel.Zoologicos" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Animales_Zonas" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Citas_Animales" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Citas_Veterinario" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Compra_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Compra_Planes" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Operacion_Modelo" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Rol_operacion_Operacion" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Parqueadero_Zoologicos" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Tiquete_Parqueadero" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Planes_Zoologicos" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Rol_operacion_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Trabajadores_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Tiquete_Vehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Trabajadores_Zonas" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoWebModel.FK_Zonas_Zoologicos" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

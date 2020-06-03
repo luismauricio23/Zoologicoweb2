@@ -1,0 +1,51 @@
+﻿@model Zoologico.Models.Vehiculo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vehiculo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_Vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Vehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marca_vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marca_vehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_Vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado_Vehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_Ingreso_vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_Ingreso_vehiculo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Placa_Vehiculo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

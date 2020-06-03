@@ -1,0 +1,1123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ZoologicoWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Animales">
+          <Key>
+            <PropertyRef Name="Id_Animal" />
+          </Key>
+          <Property Name="Id_Animal" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_Animal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Especie_Animal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Categoria_Animal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_Zona" Type="nvarchar" MaxLength="50" />
+          <Property Name="Edad_Animal" Type="int" />
+          <Property Name="Descripcion_Animal" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Nombre_Cientifico_Animal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tiempo_Zoologico" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Citas">
+          <Key>
+            <PropertyRef Name="Codigo_Cita" />
+          </Key>
+          <Property Name="Codigo_Cita" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hora_inicio_Cita" Type="datetime" />
+          <Property Name="Hora_fin_Cita" Type="datetime" />
+          <Property Name="Diagnostico_Cita" Type="nvarchar" MaxLength="50" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cedula_Veterinario" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_Animal" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Cedula_Cliente" />
+          </Key>
+          <Property Name="Cedula_Cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_Cliente" Type="nvarchar" MaxLength="50" />
+          <Property Name="Apellido_Cliente" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion_Cliente" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefono_Cliente" Type="nvarchar" MaxLength="50" />
+          <Property Name="Edad_Cliente" Type="int" />
+          <Property Name="Pass_Cliente" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Compra">
+          <Key>
+            <PropertyRef Name="Numero_Compra" />
+          </Key>
+          <Property Name="Numero_Compra" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fecha_Compra" Type="datetime" />
+          <Property Name="Cantidad_Compra" Type="nvarchar" MaxLength="50" />
+          <Property Name="Valor_Compra" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_Plan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cedula_Cliente" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Modelo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Operacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="idModulo" Type="int" />
+        </EntityType>
+        <EntityType Name="Parqueadero">
+          <Key>
+            <PropertyRef Name="Id_Parqueadero" />
+          </Key>
+          <Property Name="Id_Parqueadero" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_Parqueadero" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nit_Zoologico" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Planes">
+          <Key>
+            <PropertyRef Name="Id_Plan" />
+          </Key>
+          <Property Name="Id_Plan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_Plan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Precio_plan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nit_Zoologico" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rol_operacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idRol" Type="int" />
+          <Property Name="idOperacion" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tiquete">
+          <Key>
+            <PropertyRef Name="Numero_Tiquete" />
+          </Key>
+          <Property Name="Numero_Tiquete" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hora_Ingreso_Tiquete" Type="datetime" />
+          <Property Name="Hora_salida_Tiquete" Type="datetime" />
+          <Property Name="Valor_Hora_Tiquete" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_Parqueadero" Type="nvarchar" MaxLength="50" />
+          <Property Name="Placa_Vehiculo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Trabajadores">
+          <Key>
+            <PropertyRef Name="id_Trabajador" />
+          </Key>
+          <Property Name="id_Trabajador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula_Trabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nombre_Trabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="Apellido_Trabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefono_Trabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion_Trabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_Zona" Type="nvarchar" MaxLength="50" />
+          <Property Name="idRol_Trabajador" Type="int" />
+          <Property Name="password_Trabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="Correo_Trabajador" Type="nvarchar" MaxLength="50" />
+          <Property Name="Edad_Trabajador" Type="int" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="Placa_Vehiculo" />
+          </Key>
+          <Property Name="Placa_Vehiculo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tipo_Vehiculo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Marca_vehiculo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Estado_Vehiculo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hora_Ingreso_vehiculo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Veterinario">
+          <Key>
+            <PropertyRef Name="Cedula_Veterinario" />
+          </Key>
+          <Property Name="Cedula_Veterinario" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_Veterinario" Type="nvarchar" MaxLength="50" />
+          <Property Name="Apellido_Veterinario" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefono_Veterinario" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion_Veterinario" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Zonas">
+          <Key>
+            <PropertyRef Name="Id_Zona" />
+          </Key>
+          <Property Name="Id_Zona" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_Zona" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nit_Zoologico" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Zoologicos">
+          <Key>
+            <PropertyRef Name="Nit_Zoologico" />
+          </Key>
+          <Property Name="Nit_Zoologico" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_Zoologico" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion_Zoologico" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefono_Zoologico" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ciudad_zoologico" Type="nvarchar" MaxLength="50" />
+          <Property Name="Departamento_zoologico" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Animales_Zonas">
+          <End Role="Zonas" Type="Self.Zonas" Multiplicity="0..1" />
+          <End Role="Animales" Type="Self.Animales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zonas">
+              <PropertyRef Name="Id_Zona" />
+            </Principal>
+            <Dependent Role="Animales">
+              <PropertyRef Name="Id_Zona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Citas_Animales">
+          <End Role="Animales" Type="Self.Animales" Multiplicity="0..1" />
+          <End Role="Citas" Type="Self.Citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animales">
+              <PropertyRef Name="Id_Animal" />
+            </Principal>
+            <Dependent Role="Citas">
+              <PropertyRef Name="Id_Animal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Citas_Veterinario">
+          <End Role="Veterinario" Type="Self.Veterinario" Multiplicity="0..1" />
+          <End Role="Citas" Type="Self.Citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veterinario">
+              <PropertyRef Name="Cedula_Veterinario" />
+            </Principal>
+            <Dependent Role="Citas">
+              <PropertyRef Name="Cedula_Veterinario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Cedula_Cliente" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="Cedula_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Planes">
+          <End Role="Planes" Type="Self.Planes" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="Id_Plan" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="Id_Plan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operacion_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Operacion">
+              <PropertyRef Name="idModulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parqueadero_Zoologicos">
+          <End Role="Zoologicos" Type="Self.Zoologicos" Multiplicity="0..1" />
+          <End Role="Parqueadero" Type="Self.Parqueadero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zoologicos">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Principal>
+            <Dependent Role="Parqueadero">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Planes_Zoologicos">
+          <End Role="Zoologicos" Type="Self.Zoologicos" Multiplicity="0..1" />
+          <End Role="Planes" Type="Self.Planes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zoologicos">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Principal>
+            <Dependent Role="Planes">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rol_operacion_Operacion">
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="0..1" />
+          <End Role="Rol_operacion" Type="Self.Rol_operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rol_operacion">
+              <PropertyRef Name="idOperacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rol_operacion_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Rol_operacion" Type="Self.Rol_operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rol_operacion">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tiquete_Parqueadero">
+          <End Role="Parqueadero" Type="Self.Parqueadero" Multiplicity="0..1" />
+          <End Role="Tiquete" Type="Self.Tiquete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parqueadero">
+              <PropertyRef Name="Id_Parqueadero" />
+            </Principal>
+            <Dependent Role="Tiquete">
+              <PropertyRef Name="Id_Parqueadero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tiquete_Vehiculo">
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="0..1" />
+          <End Role="Tiquete" Type="Self.Tiquete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="Placa_Vehiculo" />
+            </Principal>
+            <Dependent Role="Tiquete">
+              <PropertyRef Name="Placa_Vehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trabajadores_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="idRol_Trabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trabajadores_Zonas">
+          <End Role="Zonas" Type="Self.Zonas" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zonas">
+              <PropertyRef Name="Id_Zona" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="Id_Zona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zonas_Zoologicos">
+          <End Role="Zoologicos" Type="Self.Zoologicos" Multiplicity="0..1" />
+          <End Role="Zonas" Type="Self.Zonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zoologicos">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Principal>
+            <Dependent Role="Zonas">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ZoologicoWebModelStoreContainer">
+          <EntitySet Name="Animales" EntityType="Self.Animales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Citas" EntityType="Self.Citas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compra" EntityType="Self.Compra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modelo" EntityType="Self.Modelo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operacion" EntityType="Self.Operacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parqueadero" EntityType="Self.Parqueadero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Planes" EntityType="Self.Planes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol_operacion" EntityType="Self.Rol_operacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tiquete" EntityType="Self.Tiquete" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trabajadores" EntityType="Self.Trabajadores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Veterinario" EntityType="Self.Veterinario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zonas" EntityType="Self.Zonas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zoologicos" EntityType="Self.Zoologicos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Animales_Zonas" Association="Self.FK_Animales_Zonas">
+            <End Role="Zonas" EntitySet="Zonas" />
+            <End Role="Animales" EntitySet="Animales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Citas_Animales" Association="Self.FK_Citas_Animales">
+            <End Role="Animales" EntitySet="Animales" />
+            <End Role="Citas" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Citas_Veterinario" Association="Self.FK_Citas_Veterinario">
+            <End Role="Veterinario" EntitySet="Veterinario" />
+            <End Role="Citas" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Cliente" Association="Self.FK_Compra_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Planes" Association="Self.FK_Compra_Planes">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operacion_Modelo" Association="Self.FK_Operacion_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Operacion" EntitySet="Operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parqueadero_Zoologicos" Association="Self.FK_Parqueadero_Zoologicos">
+            <End Role="Zoologicos" EntitySet="Zoologicos" />
+            <End Role="Parqueadero" EntitySet="Parqueadero" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Planes_Zoologicos" Association="Self.FK_Planes_Zoologicos">
+            <End Role="Zoologicos" EntitySet="Zoologicos" />
+            <End Role="Planes" EntitySet="Planes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rol_operacion_Operacion" Association="Self.FK_Rol_operacion_Operacion">
+            <End Role="Operacion" EntitySet="Operacion" />
+            <End Role="Rol_operacion" EntitySet="Rol_operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rol_operacion_Rol" Association="Self.FK_Rol_operacion_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Rol_operacion" EntitySet="Rol_operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tiquete_Parqueadero" Association="Self.FK_Tiquete_Parqueadero">
+            <End Role="Parqueadero" EntitySet="Parqueadero" />
+            <End Role="Tiquete" EntitySet="Tiquete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tiquete_Vehiculo" Association="Self.FK_Tiquete_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Tiquete" EntitySet="Tiquete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trabajadores_Rol" Association="Self.FK_Trabajadores_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trabajadores_Zonas" Association="Self.FK_Trabajadores_Zonas">
+            <End Role="Zonas" EntitySet="Zonas" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zonas_Zoologicos" Association="Self.FK_Zonas_Zoologicos">
+            <End Role="Zoologicos" EntitySet="Zoologicos" />
+            <End Role="Zonas" EntitySet="Zonas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZoologicoWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Animales">
+          <Key>
+            <PropertyRef Name="Id_Animal" />
+          </Key>
+          <Property Name="Id_Animal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre_Animal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Especie_Animal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Categoria_Animal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Zona" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Edad_Animal" Type="Int32" />
+          <Property Name="Descripcion_Animal" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre_Cientifico_Animal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tiempo_Zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zonas" Relationship="Self.FK_Animales_Zonas" FromRole="Animales" ToRole="Zonas" />
+          <NavigationProperty Name="Citas" Relationship="Self.FK_Citas_Animales" FromRole="Animales" ToRole="Citas" />
+        </EntityType>
+        <EntityType Name="Citas">
+          <Key>
+            <PropertyRef Name="Codigo_Cita" />
+          </Key>
+          <Property Name="Codigo_Cita" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hora_inicio_Cita" Type="DateTime" Precision="3" />
+          <Property Name="Hora_fin_Cita" Type="DateTime" Precision="3" />
+          <Property Name="Diagnostico_Cita" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Observaciones" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cedula_Veterinario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Animal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Animales" Relationship="Self.FK_Citas_Animales" FromRole="Citas" ToRole="Animales" />
+          <NavigationProperty Name="Veterinario" Relationship="Self.FK_Citas_Veterinario" FromRole="Citas" ToRole="Veterinario" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Cedula_Cliente" />
+          </Key>
+          <Property Name="Cedula_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Edad_Cliente" Type="Int32" />
+          <Property Name="Pass_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Compra" Relationship="Self.FK_Compra_Cliente" FromRole="Cliente" ToRole="Compra" />
+        </EntityType>
+        <EntityType Name="Compra">
+          <Key>
+            <PropertyRef Name="Numero_Compra" />
+          </Key>
+          <Property Name="Numero_Compra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha_Compra" Type="DateTime" Precision="3" />
+          <Property Name="Cantidad_Compra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Valor_Compra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Plan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cedula_Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Compra_Cliente" FromRole="Compra" ToRole="Cliente" />
+          <NavigationProperty Name="Planes" Relationship="Self.FK_Compra_Planes" FromRole="Compra" ToRole="Planes" />
+        </EntityType>
+        <EntityType Name="Modelo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Operacion" Relationship="Self.FK_Operacion_Modelo" FromRole="Modelo" ToRole="Operacion" />
+        </EntityType>
+        <EntityType Name="Operacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idModulo" Type="Int32" />
+          <NavigationProperty Name="Modelo" Relationship="Self.FK_Operacion_Modelo" FromRole="Operacion" ToRole="Modelo" />
+          <NavigationProperty Name="Rol_operacion" Relationship="Self.FK_Rol_operacion_Operacion" FromRole="Operacion" ToRole="Rol_operacion" />
+        </EntityType>
+        <EntityType Name="Parqueadero">
+          <Key>
+            <PropertyRef Name="Id_Parqueadero" />
+          </Key>
+          <Property Name="Id_Parqueadero" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre_Parqueadero" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nit_Zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Zoologicos" Relationship="Self.FK_Parqueadero_Zoologicos" FromRole="Parqueadero" ToRole="Zoologicos" />
+          <NavigationProperty Name="Tiquete" Relationship="Self.FK_Tiquete_Parqueadero" FromRole="Parqueadero" ToRole="Tiquete" />
+        </EntityType>
+        <EntityType Name="Planes">
+          <Key>
+            <PropertyRef Name="Id_Plan" />
+          </Key>
+          <Property Name="Id_Plan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre_Plan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Precio_plan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nit_Zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Compra" Relationship="Self.FK_Compra_Planes" FromRole="Planes" ToRole="Compra" />
+          <NavigationProperty Name="Zoologicos" Relationship="Self.FK_Planes_Zoologicos" FromRole="Planes" ToRole="Zoologicos" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Rol_operacion" Relationship="Self.FK_Rol_operacion_Rol" FromRole="Rol" ToRole="Rol_operacion" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK_Trabajadores_Rol" FromRole="Rol" ToRole="Trabajadores" />
+        </EntityType>
+        <EntityType Name="Rol_operacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idRol" Type="Int32" />
+          <Property Name="idOperacion" Type="Int32" />
+          <NavigationProperty Name="Operacion" Relationship="Self.FK_Rol_operacion_Operacion" FromRole="Rol_operacion" ToRole="Operacion" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_Rol_operacion_Rol" FromRole="Rol_operacion" ToRole="Rol" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tiquete">
+          <Key>
+            <PropertyRef Name="Numero_Tiquete" />
+          </Key>
+          <Property Name="Numero_Tiquete" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hora_Ingreso_Tiquete" Type="DateTime" Precision="3" />
+          <Property Name="Hora_salida_Tiquete" Type="DateTime" Precision="3" />
+          <Property Name="Valor_Hora_Tiquete" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Parqueadero" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Placa_Vehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Parqueadero" Relationship="Self.FK_Tiquete_Parqueadero" FromRole="Tiquete" ToRole="Parqueadero" />
+          <NavigationProperty Name="Vehiculo" Relationship="Self.FK_Tiquete_Vehiculo" FromRole="Tiquete" ToRole="Vehiculo" />
+        </EntityType>
+        <EntityType Name="Trabajadores">
+          <Key>
+            <PropertyRef Name="id_Trabajador" />
+          </Key>
+          <Property Name="id_Trabajador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula_Trabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre_Trabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido_Trabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono_Trabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion_Trabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Zona" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idRol_Trabajador" Type="Int32" />
+          <Property Name="password_Trabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Correo_Trabajador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Edad_Trabajador" Type="Int32" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_Trabajadores_Rol" FromRole="Trabajadores" ToRole="Rol" />
+          <NavigationProperty Name="Zonas" Relationship="Self.FK_Trabajadores_Zonas" FromRole="Trabajadores" ToRole="Zonas" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="Placa_Vehiculo" />
+          </Key>
+          <Property Name="Placa_Vehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tipo_Vehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marca_vehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Estado_Vehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hora_Ingreso_vehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tiquete" Relationship="Self.FK_Tiquete_Vehiculo" FromRole="Vehiculo" ToRole="Tiquete" />
+        </EntityType>
+        <EntityType Name="Veterinario">
+          <Key>
+            <PropertyRef Name="Cedula_Veterinario" />
+          </Key>
+          <Property Name="Cedula_Veterinario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre_Veterinario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido_Veterinario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono_Veterinario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion_Veterinario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Citas" Relationship="Self.FK_Citas_Veterinario" FromRole="Veterinario" ToRole="Citas" />
+        </EntityType>
+        <EntityType Name="Zonas">
+          <Key>
+            <PropertyRef Name="Id_Zona" />
+          </Key>
+          <Property Name="Id_Zona" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre_Zona" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nit_Zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Animales" Relationship="Self.FK_Animales_Zonas" FromRole="Zonas" ToRole="Animales" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK_Trabajadores_Zonas" FromRole="Zonas" ToRole="Trabajadores" />
+          <NavigationProperty Name="Zoologicos" Relationship="Self.FK_Zonas_Zoologicos" FromRole="Zonas" ToRole="Zoologicos" />
+        </EntityType>
+        <EntityType Name="Zoologicos">
+          <Key>
+            <PropertyRef Name="Nit_Zoologico" />
+          </Key>
+          <Property Name="Nit_Zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre_Zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion_Zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono_Zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ciudad_zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Departamento_zoologico" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Parqueadero" Relationship="Self.FK_Parqueadero_Zoologicos" FromRole="Zoologicos" ToRole="Parqueadero" />
+          <NavigationProperty Name="Planes" Relationship="Self.FK_Planes_Zoologicos" FromRole="Zoologicos" ToRole="Planes" />
+          <NavigationProperty Name="Zonas" Relationship="Self.FK_Zonas_Zoologicos" FromRole="Zoologicos" ToRole="Zonas" />
+        </EntityType>
+        <Association Name="FK_Animales_Zonas">
+          <End Role="Zonas" Type="Self.Zonas" Multiplicity="0..1" />
+          <End Role="Animales" Type="Self.Animales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zonas">
+              <PropertyRef Name="Id_Zona" />
+            </Principal>
+            <Dependent Role="Animales">
+              <PropertyRef Name="Id_Zona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Citas_Animales">
+          <End Role="Animales" Type="Self.Animales" Multiplicity="0..1" />
+          <End Role="Citas" Type="Self.Citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animales">
+              <PropertyRef Name="Id_Animal" />
+            </Principal>
+            <Dependent Role="Citas">
+              <PropertyRef Name="Id_Animal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Citas_Veterinario">
+          <End Role="Veterinario" Type="Self.Veterinario" Multiplicity="0..1" />
+          <End Role="Citas" Type="Self.Citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veterinario">
+              <PropertyRef Name="Cedula_Veterinario" />
+            </Principal>
+            <Dependent Role="Citas">
+              <PropertyRef Name="Cedula_Veterinario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Cedula_Cliente" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="Cedula_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Planes">
+          <End Role="Planes" Type="Self.Planes" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planes">
+              <PropertyRef Name="Id_Plan" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="Id_Plan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operacion_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Operacion">
+              <PropertyRef Name="idModulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rol_operacion_Operacion">
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="0..1" />
+          <End Role="Rol_operacion" Type="Self.Rol_operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rol_operacion">
+              <PropertyRef Name="idOperacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parqueadero_Zoologicos">
+          <End Role="Zoologicos" Type="Self.Zoologicos" Multiplicity="0..1" />
+          <End Role="Parqueadero" Type="Self.Parqueadero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zoologicos">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Principal>
+            <Dependent Role="Parqueadero">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tiquete_Parqueadero">
+          <End Role="Parqueadero" Type="Self.Parqueadero" Multiplicity="0..1" />
+          <End Role="Tiquete" Type="Self.Tiquete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parqueadero">
+              <PropertyRef Name="Id_Parqueadero" />
+            </Principal>
+            <Dependent Role="Tiquete">
+              <PropertyRef Name="Id_Parqueadero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Planes_Zoologicos">
+          <End Role="Zoologicos" Type="Self.Zoologicos" Multiplicity="0..1" />
+          <End Role="Planes" Type="Self.Planes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zoologicos">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Principal>
+            <Dependent Role="Planes">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rol_operacion_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Rol_operacion" Type="Self.Rol_operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Rol_operacion">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trabajadores_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="idRol_Trabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tiquete_Vehiculo">
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="0..1" />
+          <End Role="Tiquete" Type="Self.Tiquete" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehiculo">
+              <PropertyRef Name="Placa_Vehiculo" />
+            </Principal>
+            <Dependent Role="Tiquete">
+              <PropertyRef Name="Placa_Vehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trabajadores_Zonas">
+          <End Role="Zonas" Type="Self.Zonas" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zonas">
+              <PropertyRef Name="Id_Zona" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="Id_Zona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zonas_Zoologicos">
+          <End Role="Zoologicos" Type="Self.Zoologicos" Multiplicity="0..1" />
+          <End Role="Zonas" Type="Self.Zonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zoologicos">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Principal>
+            <Dependent Role="Zonas">
+              <PropertyRef Name="Nit_Zoologico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ZoologicoWebEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Animales" EntityType="Self.Animales" />
+          <EntitySet Name="Citas" EntityType="Self.Citas" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Compra" EntityType="Self.Compra" />
+          <EntitySet Name="Modelo" EntityType="Self.Modelo" />
+          <EntitySet Name="Operacion" EntityType="Self.Operacion" />
+          <EntitySet Name="Parqueadero" EntityType="Self.Parqueadero" />
+          <EntitySet Name="Planes" EntityType="Self.Planes" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="Rol_operacion" EntityType="Self.Rol_operacion" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Tiquete" EntityType="Self.Tiquete" />
+          <EntitySet Name="Trabajadores" EntityType="Self.Trabajadores" />
+          <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" />
+          <EntitySet Name="Veterinario" EntityType="Self.Veterinario" />
+          <EntitySet Name="Zonas" EntityType="Self.Zonas" />
+          <EntitySet Name="Zoologicos" EntityType="Self.Zoologicos" />
+          <AssociationSet Name="FK_Animales_Zonas" Association="Self.FK_Animales_Zonas">
+            <End Role="Zonas" EntitySet="Zonas" />
+            <End Role="Animales" EntitySet="Animales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Citas_Animales" Association="Self.FK_Citas_Animales">
+            <End Role="Animales" EntitySet="Animales" />
+            <End Role="Citas" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Citas_Veterinario" Association="Self.FK_Citas_Veterinario">
+            <End Role="Veterinario" EntitySet="Veterinario" />
+            <End Role="Citas" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Cliente" Association="Self.FK_Compra_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Planes" Association="Self.FK_Compra_Planes">
+            <End Role="Planes" EntitySet="Planes" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operacion_Modelo" Association="Self.FK_Operacion_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Operacion" EntitySet="Operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rol_operacion_Operacion" Association="Self.FK_Rol_operacion_Operacion">
+            <End Role="Operacion" EntitySet="Operacion" />
+            <End Role="Rol_operacion" EntitySet="Rol_operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parqueadero_Zoologicos" Association="Self.FK_Parqueadero_Zoologicos">
+            <End Role="Zoologicos" EntitySet="Zoologicos" />
+            <End Role="Parqueadero" EntitySet="Parqueadero" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tiquete_Parqueadero" Association="Self.FK_Tiquete_Parqueadero">
+            <End Role="Parqueadero" EntitySet="Parqueadero" />
+            <End Role="Tiquete" EntitySet="Tiquete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Planes_Zoologicos" Association="Self.FK_Planes_Zoologicos">
+            <End Role="Zoologicos" EntitySet="Zoologicos" />
+            <End Role="Planes" EntitySet="Planes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rol_operacion_Rol" Association="Self.FK_Rol_operacion_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Rol_operacion" EntitySet="Rol_operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trabajadores_Rol" Association="Self.FK_Trabajadores_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tiquete_Vehiculo" Association="Self.FK_Tiquete_Vehiculo">
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+            <End Role="Tiquete" EntitySet="Tiquete" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trabajadores_Zonas" Association="Self.FK_Trabajadores_Zonas">
+            <End Role="Zonas" EntitySet="Zonas" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zonas_Zoologicos" Association="Self.FK_Zonas_Zoologicos">
+            <End Role="Zoologicos" EntitySet="Zoologicos" />
+            <End Role="Zonas" EntitySet="Zonas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ZoologicoWebModelStoreContainer" CdmEntityContainer="ZoologicoWebEntities1">
+          <EntitySetMapping Name="Animales">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Animales">
+              <MappingFragment StoreEntitySet="Animales">
+                <ScalarProperty Name="Id_Animal" ColumnName="Id_Animal" />
+                <ScalarProperty Name="Nombre_Animal" ColumnName="Nombre_Animal" />
+                <ScalarProperty Name="Especie_Animal" ColumnName="Especie_Animal" />
+                <ScalarProperty Name="Categoria_Animal" ColumnName="Categoria_Animal" />
+                <ScalarProperty Name="Id_Zona" ColumnName="Id_Zona" />
+                <ScalarProperty Name="Edad_Animal" ColumnName="Edad_Animal" />
+                <ScalarProperty Name="Descripcion_Animal" ColumnName="Descripcion_Animal" />
+                <ScalarProperty Name="Nombre_Cientifico_Animal" ColumnName="Nombre_Cientifico_Animal" />
+                <ScalarProperty Name="Tiempo_Zoologico" ColumnName="Tiempo_Zoologico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Citas">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Citas">
+              <MappingFragment StoreEntitySet="Citas">
+                <ScalarProperty Name="Codigo_Cita" ColumnName="Codigo_Cita" />
+                <ScalarProperty Name="Hora_inicio_Cita" ColumnName="Hora_inicio_Cita" />
+                <ScalarProperty Name="Hora_fin_Cita" ColumnName="Hora_fin_Cita" />
+                <ScalarProperty Name="Diagnostico_Cita" ColumnName="Diagnostico_Cita" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Cedula_Veterinario" ColumnName="Cedula_Veterinario" />
+                <ScalarProperty Name="Id_Animal" ColumnName="Id_Animal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Cedula_Cliente" ColumnName="Cedula_Cliente" />
+                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
+                <ScalarProperty Name="Apellido_Cliente" ColumnName="Apellido_Cliente" />
+                <ScalarProperty Name="Direccion_Cliente" ColumnName="Direccion_Cliente" />
+                <ScalarProperty Name="Telefono_Cliente" ColumnName="Telefono_Cliente" />
+                <ScalarProperty Name="Edad_Cliente" ColumnName="Edad_Cliente" />
+                <ScalarProperty Name="Pass_Cliente" ColumnName="Pass_Cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compra">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Compra">
+              <MappingFragment StoreEntitySet="Compra">
+                <ScalarProperty Name="Numero_Compra" ColumnName="Numero_Compra" />
+                <ScalarProperty Name="Fecha_Compra" ColumnName="Fecha_Compra" />
+                <ScalarProperty Name="Cantidad_Compra" ColumnName="Cantidad_Compra" />
+                <ScalarProperty Name="Valor_Compra" ColumnName="Valor_Compra" />
+                <ScalarProperty Name="Id_Plan" ColumnName="Id_Plan" />
+                <ScalarProperty Name="Cedula_Cliente" ColumnName="Cedula_Cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modelo">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Modelo">
+              <MappingFragment StoreEntitySet="Modelo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operacion">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Operacion">
+              <MappingFragment StoreEntitySet="Operacion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idModulo" ColumnName="idModulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parqueadero">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Parqueadero">
+              <MappingFragment StoreEntitySet="Parqueadero">
+                <ScalarProperty Name="Id_Parqueadero" ColumnName="Id_Parqueadero" />
+                <ScalarProperty Name="Nombre_Parqueadero" ColumnName="Nombre_Parqueadero" />
+                <ScalarProperty Name="Nit_Zoologico" ColumnName="Nit_Zoologico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Planes">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Planes">
+              <MappingFragment StoreEntitySet="Planes">
+                <ScalarProperty Name="Id_Plan" ColumnName="Id_Plan" />
+                <ScalarProperty Name="Nombre_Plan" ColumnName="Nombre_Plan" />
+                <ScalarProperty Name="Precio_plan" ColumnName="Precio_plan" />
+                <ScalarProperty Name="Nit_Zoologico" ColumnName="Nit_Zoologico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol_operacion">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Rol_operacion">
+              <MappingFragment StoreEntitySet="Rol_operacion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="idOperacion" ColumnName="idOperacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tiquete">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Tiquete">
+              <MappingFragment StoreEntitySet="Tiquete">
+                <ScalarProperty Name="Numero_Tiquete" ColumnName="Numero_Tiquete" />
+                <ScalarProperty Name="Hora_Ingreso_Tiquete" ColumnName="Hora_Ingreso_Tiquete" />
+                <ScalarProperty Name="Hora_salida_Tiquete" ColumnName="Hora_salida_Tiquete" />
+                <ScalarProperty Name="Valor_Hora_Tiquete" ColumnName="Valor_Hora_Tiquete" />
+                <ScalarProperty Name="Id_Parqueadero" ColumnName="Id_Parqueadero" />
+                <ScalarProperty Name="Placa_Vehiculo" ColumnName="Placa_Vehiculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trabajadores">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Trabajadores">
+              <MappingFragment StoreEntitySet="Trabajadores">
+                <ScalarProperty Name="id_Trabajador" ColumnName="id_Trabajador" />
+                <ScalarProperty Name="Cedula_Trabajador" ColumnName="Cedula_Trabajador" />
+                <ScalarProperty Name="Nombre_Trabajador" ColumnName="Nombre_Trabajador" />
+                <ScalarProperty Name="Apellido_Trabajador" ColumnName="Apellido_Trabajador" />
+                <ScalarProperty Name="Telefono_Trabajador" ColumnName="Telefono_Trabajador" />
+                <ScalarProperty Name="Direccion_Trabajador" ColumnName="Direccion_Trabajador" />
+                <ScalarProperty Name="Id_Zona" ColumnName="Id_Zona" />
+                <ScalarProperty Name="idRol_Trabajador" ColumnName="idRol_Trabajador" />
+                <ScalarProperty Name="password_Trabajador" ColumnName="password_Trabajador" />
+                <ScalarProperty Name="Correo_Trabajador" ColumnName="Correo_Trabajador" />
+                <ScalarProperty Name="Edad_Trabajador" ColumnName="Edad_Trabajador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehiculo">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Vehiculo">
+              <MappingFragment StoreEntitySet="Vehiculo">
+                <ScalarProperty Name="Placa_Vehiculo" ColumnName="Placa_Vehiculo" />
+                <ScalarProperty Name="Tipo_Vehiculo" ColumnName="Tipo_Vehiculo" />
+                <ScalarProperty Name="Marca_vehiculo" ColumnName="Marca_vehiculo" />
+                <ScalarProperty Name="Estado_Vehiculo" ColumnName="Estado_Vehiculo" />
+                <ScalarProperty Name="Hora_Ingreso_vehiculo" ColumnName="Hora_Ingreso_vehiculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Veterinario">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Veterinario">
+              <MappingFragment StoreEntitySet="Veterinario">
+                <ScalarProperty Name="Cedula_Veterinario" ColumnName="Cedula_Veterinario" />
+                <ScalarProperty Name="Nombre_Veterinario" ColumnName="Nombre_Veterinario" />
+                <ScalarProperty Name="Apellido_Veterinario" ColumnName="Apellido_Veterinario" />
+                <ScalarProperty Name="Telefono_Veterinario" ColumnName="Telefono_Veterinario" />
+                <ScalarProperty Name="Direccion_Veterinario" ColumnName="Direccion_Veterinario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zonas">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Zonas">
+              <MappingFragment StoreEntitySet="Zonas">
+                <ScalarProperty Name="Id_Zona" ColumnName="Id_Zona" />
+                <ScalarProperty Name="Nombre_Zona" ColumnName="Nombre_Zona" />
+                <ScalarProperty Name="Nit_Zoologico" ColumnName="Nit_Zoologico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zoologicos">
+            <EntityTypeMapping TypeName="ZoologicoWebModel.Zoologicos">
+              <MappingFragment StoreEntitySet="Zoologicos">
+                <ScalarProperty Name="Nit_Zoologico" ColumnName="Nit_Zoologico" />
+                <ScalarProperty Name="Nombre_Zoologico" ColumnName="Nombre_Zoologico" />
+                <ScalarProperty Name="Direccion_Zoologico" ColumnName="Direccion_Zoologico" />
+                <ScalarProperty Name="Telefono_Zoologico" ColumnName="Telefono_Zoologico" />
+                <ScalarProperty Name="Ciudad_zoologico" ColumnName="Ciudad_zoologico" />
+                <ScalarProperty Name="Departamento_zoologico" ColumnName="Departamento_zoologico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

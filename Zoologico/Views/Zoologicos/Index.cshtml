@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Zoologico.Models.Zoologicos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Zoologico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion_Zoologico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono_Zoologico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciudad_zoologico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamento_zoologico)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Zoologico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion_Zoologico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono_Zoologico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciudad_zoologico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamento_zoologico)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Nit_Zoologico }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Nit_Zoologico }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Nit_Zoologico })
+        </td>
+    </tr>
+}
+
+</table>

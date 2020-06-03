@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Zoologico.Models.Trabajadores>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula_Trabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Trabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido_Trabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono_Trabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion_Trabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password_Trabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo_Trabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad_Trabajador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rol.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zonas.Nombre_Zona)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cedula_Trabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Trabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido_Trabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono_Trabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion_Trabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password_Trabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo_Trabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Edad_Trabajador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rol.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zonas.Nombre_Zona)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_Trabajador }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_Trabajador }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_Trabajador })
+        </td>
+    </tr>
+}
+
+</table>

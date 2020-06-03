@@ -1,0 +1,65 @@
+﻿@model Zoologico.Models.Compra
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Compra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Compra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Compra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad_Compra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad_Compra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor_Compra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor_Compra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Planes.Nombre_Plan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Planes.Nombre_Plan)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,83 @@
+﻿@model Zoologico.Models.Animales
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Animales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Animal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Especie_Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Especie_Animal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria_Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria_Animal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edad_Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edad_Animal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion_Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion_Animal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Cientifico_Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Cientifico_Animal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tiempo_Zoologico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tiempo_Zoologico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zonas.Nombre_Zona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zonas.Nombre_Zona)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Animal }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
