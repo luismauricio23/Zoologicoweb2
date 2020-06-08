@@ -1,0 +1,59 @@
+﻿@model Zoologico.Models.Tiquete
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tiquete</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_Ingreso_Tiquete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_Ingreso_Tiquete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_salida_Tiquete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_salida_Tiquete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor_Hora_Tiquete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor_Hora_Tiquete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parqueadero.Nombre_Parqueadero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parqueadero.Nombre_Parqueadero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehiculo.Tipo_Vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehiculo.Tipo_Vehiculo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Numero_Tiquete }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

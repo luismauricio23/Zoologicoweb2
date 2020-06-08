@@ -2,61 +2,62 @@
 
 @{
     ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+       Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
-
-<h2>Edit</h2>
+<style>
+    .form-group {
+        margin-left: 70px;
+    }
+</style>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Veterinario</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Cedula_Veterinario)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nombre_Veterinario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombre_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nombre_Veterinario, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<form>
+    <h4 class="text-center">Editar Veterinario</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Cedula_Veterinario)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Apellido_Veterinario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Apellido_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Apellido_Veterinario, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Telefono_Veterinario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Telefono_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Telefono_Veterinario, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Direccion_Veterinario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Direccion_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Direccion_Veterinario, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+<div class="form-row">
+    <div class="form-group col-md-5">
+        <h5>Cedula </h5>
+        @Html.EditorFor(model => model.Cedula_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Cedula_Veterinario, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group col-md-5">
+        <h5>Nombre</h5>
+        @Html.EditorFor(model => model.Nombre_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Nombre_Veterinario, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group col-md-5">
+        <h5>Apellido</h5>
+        @Html.EditorFor(model => model.Apellido_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Apellido_Veterinario, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group col-md-5">
+        <h5>Telefono</h5>
+        @Html.EditorFor(model => model.Telefono_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Telefono_Veterinario, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group col-md-5">
+        <h5>Direccion</h5>
+        @Html.EditorFor(model => model.Direccion_Veterinario, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Direccion_Veterinario, "", new { @class = "text-danger" })
+    </div>
+</div>
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-10">
+            <input type="submit" value="Guardar" class="btn btn-outline-dark" />
+            <a href="@Url.Action("Index", "Veterinarios")" class="btn btn-outline-dark">
+                <i class="icon-pencil icon-white"></i>
+                <span>
+                    <strong>Regresar</strong>
+                </span>
+            </a>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+</form>
+}

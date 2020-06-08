@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Zoologico.Models.Tiquete>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora_Ingreso_Tiquete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora_salida_Tiquete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor_Hora_Tiquete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parqueadero.Nombre_Parqueadero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehiculo.Tipo_Vehiculo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora_Ingreso_Tiquete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora_salida_Tiquete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor_Hora_Tiquete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parqueadero.Nombre_Parqueadero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehiculo.Tipo_Vehiculo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Numero_Tiquete }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Numero_Tiquete }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Numero_Tiquete })
+        </td>
+    </tr>
+}
+
+</table>

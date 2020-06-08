@@ -132,6 +132,7 @@
     <Compile Include="Controllers\PlanesController.cs" />
     <Compile Include="Controllers\RolsController.cs" />
     <Compile Include="Controllers\Rol_operacionController.cs" />
+    <Compile Include="Controllers\TiquetesController.cs" />
     <Compile Include="Controllers\TrabajadoresController.cs" />
     <Compile Include="Controllers\VehiculoesController.cs" />
     <Compile Include="Controllers\VeterinariosController.cs" />
@@ -301,6 +302,11 @@
     <Content Include="Views\Clientes\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutTrabajadores.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Tiquetes\Create.cshtml" />
+    <Content Include="Views\Tiquetes\Delete.cshtml" />
+    <Content Include="Views\Tiquetes\Details.cshtml" />
+    <Content Include="Views\Tiquetes\Edit.cshtml" />
+    <Content Include="Views\Tiquetes\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

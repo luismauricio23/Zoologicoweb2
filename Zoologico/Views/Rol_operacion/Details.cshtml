@@ -2,34 +2,46 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
+<style>
+    .form-group {
+        margin-left: 70px;
+    }
+</style>
 
-<h2>Details</h2>
 
 <div>
-    <h4>Rol_operacion</h4>
+    <h4 class="text-center">Detalle Rol Operacion</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Operacion.nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Operacion.nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rol.nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rol.nombre)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>id</h5>
+                @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre de Operacion</h5>
+                @Html.EditorFor(model => model.Operacion.nombre, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Operacion.nombre, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre de Rol</h5>
+                @Html.EditorFor(model => model.Rol.nombre, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Rol.nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </form>
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-10">
+            <a href="@Url.Action("Index", "Rol_Operacion")" class="btn btn-outline-dark">
+                <i class="icon-pencil icon-white"></i>
+                <span>
+                    <strong>Regresar</strong>
+                </span>
+            </a>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }, new { @class = "btn btn-outline-info" })
+        </div>
+    </div>
+    </div>
