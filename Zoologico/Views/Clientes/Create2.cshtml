@@ -1,0 +1,88 @@
+﻿@model Zoologico.Models.Cliente
+
+@{
+    ViewBag.Title = "Create2";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="~/Library/style/main.css" rel="stylesheet" />
+
+<style>
+.ma{
+    margin-left:700px;
+    margin-top:-100px;
+    }
+.map {
+ width: 100%;
+ height: 500px;
+}
+.mapa{
+
+    width:600px;
+    height:400px;
+    margin-left:700px;
+    margin-top:-600px;
+}
+.form-group {
+ margin-left: 10px;
+ }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <img src="~/Library/Imagenes/mapache.jpg" class="map">
+    </div>
+    <br />
+    <form class="form-group">
+        <h4 class="text-center">Registrese</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Cedula</h5>
+                @Html.EditorFor(model => model.Cedula_Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Cedula_Cliente, "", new { @class = "text-danger" })
+
+                <h5>Nombre</h5>
+                @Html.EditorFor(model => model.Nombre_Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Cliente, "", new { @class = "text-danger" })
+
+                <h5>Apellido</h5>
+                @Html.EditorFor(model => model.Apellido_Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Apellido_Cliente, "", new { @class = "text-danger" })
+
+                <h5>Direccion</h5>
+                @Html.EditorFor(model => model.Direccion_Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Direccion_Cliente, "", new { @class = "text-danger" })
+
+                <h5>Telefono</h5>
+                @Html.EditorFor(model => model.Telefono_Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Telefono_Cliente, "", new { @class = "text-danger" })
+
+                <h5>Edad</h5>
+                @Html.EditorFor(model => model.Edad_Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Edad_Cliente, "", new { @class = "text-danger" })
+
+                <h5>Contraseña</h5>
+                @Html.EditorFor(model => model.Pass_Cliente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pass_Cliente, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+        <div>
+            <img src="~/Library/Imagenes/cliente.jpeg" class="mapa">
+            <p class="ma"> ksjdsoajdosiajdoaijdsoaijdaoijdsoiajdoaisjdsoia</p>
+
+        </div>
+            <div class="form-group">
+                <div class="col-md-offset-1 col-md-10">
+                    <input type="submit" value="Guardar" class="btn btn-outline-dark" />
+                </div>
+            </div>
+
+    </form>
+
+}
+
+

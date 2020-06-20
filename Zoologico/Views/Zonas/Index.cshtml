@@ -13,7 +13,7 @@
 
 <h2 class="text-center">Zonas</h2>
 
-<a href="@Url.Action("Create", "Rols")" class="btn btn-outline-dark mao">
+<a href="@Url.Action("Create", "Zonas")" class="btn btn-outline-dark mao">
     <i class="icon-pencil icon-white"></i>
     <span>
         <strong>Nuevo Zona</strong>
@@ -47,6 +47,9 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Zoologicos.Nombre_Zoologico)
+    </td>
+    <td>
+
     </td>
     <td>
         @Html.ActionLink("Editar", "Edit", new { id = item.Id_Zona }, new { @class = "btn btn-outline-info" })

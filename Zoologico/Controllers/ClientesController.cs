@@ -123,5 +123,27 @@ namespace Zoologico.Controllers
             }
             base.Dispose(disposing);
         }
+        // GET: Clientes/Create
+        public ActionResult Create2()
+        {
+            return View();
+        }
+
+        // POST: Clientes/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2([Bind(Include = "Cedula_Cliente,Nombre_Cliente,Apellido_Cliente,Direccion_Cliente,Telefono_Cliente,Edad_Cliente,Pass_Cliente")] Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Cliente.Add(cliente);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(cliente);
+        }
     }
 }
