@@ -2,75 +2,74 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Create</h2>
+<style>
 
-@using (Html.BeginForm()) 
+    .form-group {
+        margin-left: 70px;
+    }
+</style>
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Compra</h4>
+        <h4 class="text-center">Registrar Compra</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Numero_Compra, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Numero</h5>
                 @Html.EditorFor(model => model.Numero_Compra, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Numero_Compra, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Fecha_Compra, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Fecha de Compra</h5>
                 @Html.EditorFor(model => model.Fecha_Compra, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Fecha_Compra, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Cantidad_Compra, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Cantidad Tiquetes</h5>
                 @Html.EditorFor(model => model.Cantidad_Compra, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Cantidad_Compra, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Valor_Compra, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Valor</h5>
                 @Html.EditorFor(model => model.Valor_Compra, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Valor_Compra, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Id_Plan, "Id_Plan", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Id Plan</h5>
                 @Html.DropDownList("Id_Plan", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Id_Plan, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Cedula_Cliente, "Cedula_Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Nombre Cliente</h5>
                 @Html.DropDownList("Cedula_Cliente", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Cedula_Cliente, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Cliente.Cedula_Cliente, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="col-md-offset-1 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-outline-dark" />
+                <a href="@Url.Action("Index", "Compras")" class="btn btn-outline-dark">
+
+                    <i class="icon-pencil icon-white"></i>
+
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+
+                </a>
             </div>
+
         </div>
     </div>
+
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+

@@ -5,66 +5,84 @@
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Index</h2>
+<style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    .mao {
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<h2 class="text-center">Clientes Registrados</h2>
+
+
+<a href="@Url.Action("Create", "Clientes")" class="btn btn-outline-dark mao">
+    <i class="icon-pencil icon-white"></i>
+    <span>
+        <strong>Registrar Cliente</strong>
+    </span>
+</a>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Cedula_Cliente)
+            Cedula
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nombre_Cliente)
+            Nombre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Apellido_Cliente)
+            Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Direccion_Cliente)
+            Direccion
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Telefono_Cliente)
+            Telefono
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Edad_Cliente)
+            Edad
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Pass_Cliente)
+            Password
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cedula_Cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre_Cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Apellido_Cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion_Cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefono_Cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Edad_Cliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pass_Cliente)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Cedula_Cliente }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Cedula_Cliente }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Cedula_Cliente })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pass_Cliente)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Cedula_Cliente }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Cedula_Cliente }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.Cedula_Cliente }, new { @class = "btn btn-outline-primary" })
+            </td>
+
+
+        </tr>
+    }
 
 </table>

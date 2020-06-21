@@ -2,64 +2,82 @@
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Delete</h2>
+<style>
 
-<h3>Are you sure you want to delete this?</h3>
+    .form-group {
+        margin-left: 70px;
+    }
+
+    .float {
+        margin-left: 1000px;
+    }
+
+
+    .form-actions {
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+
+    .t {
+        margin-bottom: 50px;
+        margin-top: -80px;
+        margin-left: 55px;
+    }
+</style>
+
+<img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
+<div class="alert alert-warning col-md-4 t">
+    <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
+</div>
 <div>
-    <h4>Zoologicos</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre_Zoologico)
-        </dt>
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Nit</h5>
+                @Html.EditorFor(model => model.Nit_Zoologico, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Nit_Zoologico, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre</h5>
+                @Html.EditorFor(model => model.Nombre_Zoologico, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Zoologico, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Dirección</h5>
+                @Html.EditorFor(model => model.Direccion_Zoologico, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Direccion_Zoologico, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Telefono</h5>
+                @Html.EditorFor(model => model.Telefono_Zoologico, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Telefono_Zoologico, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Departamento</h5>
+                @Html.EditorFor(model => model.Departamento_zoologico, new { htmlAttributes = new { @class = "form-control ", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Departamento_zoologico, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Ciudad</h5>
+                @Html.EditorFor(model => model.Ciudad_zoologico, new { htmlAttributes = new { @class = "form-control ", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Ciudad_zoologico, "", new { @class = "text-danger" })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre_Zoologico)
-        </dd>
+        </div>
+    </form>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion_Zoologico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Direccion_Zoologico)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono_Zoologico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefono_Zoologico)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Ciudad_zoologico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ciudad_zoologico)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Departamento_zoologico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Departamento_zoologico)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-outline-dark" />
+            @Html.ActionLink("Regresar", "Index", new { id = Model.Nit_Zoologico }, new { @class = "btn btn-outline-info" })
         </div>
     }
+
 </div>

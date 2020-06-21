@@ -140,7 +140,7 @@ namespace Zoologico.Controllers
             {
                 db.Cliente.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Exitoso","Home");
             }
 
             return View(cliente);

@@ -2,58 +2,75 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Details</h2>
+<style>
+
+
+    .form-group {
+        margin-left: 70px;
+    }
+
+    .float {
+        margin-left: 1000px;
+    }
+
+    .form-actions {
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+
+    .t {
+        margin-bottom: 50px;
+        margin-top: -80px;
+        margin-left: 55px;
+    }
+</style>
 
 <div>
-    <h4>Compra</h4>
+    <h4 class="text-center">Informacion de la Compra</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_Compra)
-        </dt>
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Fecha</h5>
+                @Html.EditorFor(model => model.Fecha_Compra, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Fecha_Compra, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Cantidad de Tiquetes</h5>
+                @Html.EditorFor(model => model.Cantidad_Compra, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Cantidad_Compra, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Valor Compra</h5>
+                @Html.EditorFor(model => model.Valor_Compra, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Valor_Compra, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre del Cliente</h5>
+                @Html.EditorFor(model => model.Cliente.Nombre_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Cliente.Nombre_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre Plan</h5>
+                @Html.EditorFor(model => model.Planes.Nombre_Plan, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Planes.Nombre_Plan, "", new { @class = "text-danger" })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_Compra)
-        </dd>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <a href="@Url.Action("Index", "Compras")" class="btn btn-outline-dark">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Numero_Compra }, new { @class = "btn btn-outline-info" })
+            </div>
+        </div>
+    </form>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cantidad_Compra)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cantidad_Compra)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Valor_Compra)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Valor_Compra)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cliente.Nombre_Cliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Planes.Nombre_Plan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Planes.Nombre_Plan)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Numero_Compra }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

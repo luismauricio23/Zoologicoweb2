@@ -2,56 +2,78 @@
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Delete</h2>
+<style>
 
-<h3>Are you sure you want to delete this?</h3>
+    .form-group {
+        margin-left: 70px;
+    }
+
+    .float {
+        margin-left: 1000px;
+    }
+
+
+    .form-actions {
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+
+    .t {
+        margin-bottom: 50px;
+        margin-top: -80px;
+        margin-left: 55px;
+    }
+</style>
+
+<img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
+<div class="alert alert-warning col-md-4 t">
+    <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
+</div>
 <div>
-    <h4>Vehiculo</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo_Vehiculo)
-        </dt>
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Placa</h5>
+                @Html.EditorFor(model => model.Placa_Vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Placa_Vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Tipo Vehiculo</h5>
+                @Html.EditorFor(model => model.Tipo_Vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Tipo_Vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Marca</h5>
+                @Html.EditorFor(model => model.Marca_vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Marca_vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Estado</h5>
+                @Html.EditorFor(model => model.Estado_Vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Estado_Vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Hora de Ingreso</h5>
+                @Html.EditorFor(model => model.Hora_Ingreso_vehiculo, new { htmlAttributes = new { @class = "form-control ", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Hora_Ingreso_vehiculo, "", new { @class = "text-danger" })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tipo_Vehiculo)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Marca_vehiculo)
-        </dt>
+        </div>
+    </form>
 
-        <dd>
-            @Html.DisplayFor(model => model.Marca_vehiculo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado_Vehiculo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estado_Vehiculo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Hora_Ingreso_vehiculo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Hora_Ingreso_vehiculo)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-outline-dark" />
+            @Html.ActionLink("Regresar", "Index", new { id = Model.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
         </div>
     }
+
 </div>

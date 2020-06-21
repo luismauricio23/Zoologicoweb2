@@ -13,5 +13,9 @@ namespace Zoologico.Controllers
         {
             return View();
         }
+        public ActionResult Exitoso()
+        {
+            return View();
+        }
     }
 }

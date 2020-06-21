@@ -2,50 +2,75 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Details</h2>
+<style>
+
+
+    .form-group {
+        margin-left: 70px;
+    }
+
+    .float {
+        margin-left: 1000px;
+    }
+
+    .form-actions {
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+
+    .t {
+        margin-bottom: 50px;
+        margin-top: -80px;
+        margin-left: 55px;
+    }
+</style>
 
 <div>
-    <h4>Vehiculo</h4>
+    <h2 class="text-center">Informacion Del Vehiculo</h2>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo_Vehiculo)
-        </dt>
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Placa</h5>
+                @Html.EditorFor(model => model.Placa_Vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Placa_Vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Tipo Vehiculo</h5>
+                @Html.EditorFor(model => model.Tipo_Vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Marca_vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Marca</h5>
+                @Html.EditorFor(model => model.Marca_vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Marca_vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Estado</h5>
+                @Html.EditorFor(model => model.Estado_Vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Estado_Vehiculo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Hora de Ingreso</h5>
+                @Html.EditorFor(model => model.Hora_Ingreso_vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Hora_Ingreso_vehiculo, "", new { @class = "text-danger" })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tipo_Vehiculo)
-        </dd>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <a href="@Url.Action("Index", "Vehiculoes")" class="btn btn-outline-dark">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
+            </div>
+        </div>
+    </form>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Marca_vehiculo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Marca_vehiculo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado_Vehiculo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estado_Vehiculo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Hora_Ingreso_vehiculo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Hora_Ingreso_vehiculo)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Placa_Vehiculo }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

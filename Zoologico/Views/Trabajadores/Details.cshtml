@@ -2,98 +2,100 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Details</h2>
+<style>
+
+
+    .form-group {
+        margin-left: 70px;
+    }
+
+    .float {
+        margin-left: 1000px;
+    }
+
+    .form-actions {
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+
+    .t {
+        margin-bottom: 50px;
+        margin-top: -80px;
+        margin-left: 55px;
+    }
+</style>
 
 <div>
-    <h4>Trabajadores</h4>
+    <h2 class="text-center">Informacion Del Trabajador</h2>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cedula_Trabajador)
-        </dt>
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Cedula</h5>
+                @Html.EditorFor(model => model.Cedula_Trabajador, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Cedula_Trabajador, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre</h5>
+                @Html.EditorFor(model => model.Nombre_Trabajador, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Trabajador, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Apellido</h5>
+                @Html.EditorFor(model => model.Apellido_Trabajador, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Apellido_Trabajador, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Dirección</h5>
+                @Html.EditorFor(model => model.Direccion_Trabajador, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Direccion_Trabajador, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Telefono</h5>
+                @Html.EditorFor(model => model.Telefono_Trabajador, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Telefono_Trabajador, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Edad</h5>
+                @Html.EditorFor(model => model.Edad_Trabajador, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Edad_Trabajador, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Correo</h5>
+                @Html.EditorFor(model => model.Correo_Trabajador, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Correo_Trabajador, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Password</h5>
+                @Html.EditorFor(model => model.password_Trabajador, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.password_Trabajador, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Rol</h5>
+                @Html.EditorFor(model => model.Rol.nombre, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Rol.nombre, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Zona</h5>
+                @Html.EditorFor(model => model.Zonas.Nombre_Zona, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Zonas.Nombre_Zona, "", new { @class = "text-danger" })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cedula_Trabajador)
-        </dd>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <a href="@Url.Action("Index", "Trabajadores")" class="btn btn-outline-dark">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.id_Trabajador }, new { @class = "btn btn-outline-info" })
+            </div>
+        </div>
+    </form>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre_Trabajador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre_Trabajador)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido_Trabajador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Apellido_Trabajador)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono_Trabajador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefono_Trabajador)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion_Trabajador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Direccion_Trabajador)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.password_Trabajador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.password_Trabajador)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Correo_Trabajador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Correo_Trabajador)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Edad_Trabajador)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Edad_Trabajador)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rol.nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rol.nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Zonas.Nombre_Zona)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Zonas.Nombre_Zona)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_Trabajador }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -308,6 +308,7 @@
     <Content Include="Views\Tiquetes\Edit.cshtml" />
     <Content Include="Views\Tiquetes\Index.cshtml" />
     <Content Include="Views\Clientes\Create2.cshtml" />
+    <Content Include="Views\Home\Exitoso.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

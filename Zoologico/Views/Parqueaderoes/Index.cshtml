@@ -5,36 +5,65 @@
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Index</h2>
+<style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    .mao {
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<h2 class="text-center">Parqueaderos Existentes</h2>
+
+<a href="@Url.Action("Create", "Parqueaderoes")" class="btn btn-outline-dark mao">
+    <i class="icon-pencil icon-white"></i>
+    <span>
+        <strong>Registrar Parqueadero</strong>
+    </span>
+</a>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Nombre_Parqueadero)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Zoologicos.Nombre_Zoologico)
+            Id Parqueadero
+        </th>
+        <th>
+            Nombre Parqueadero
+        </th>
+        <th></th>
+        <th>
+            Nombre Zoologico
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre_Parqueadero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Zoologicos.Nombre_Zoologico)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Parqueadero }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id_Parqueadero }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Parqueadero })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Parqueadero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Parqueadero)
+            </td>
+            <td>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zoologicos.Nombre_Zoologico)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-primary" })
+            </td>
+
+
+        </tr>
+    }
 
 </table>

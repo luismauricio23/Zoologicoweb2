@@ -1,46 +1,73 @@
-﻿@model IEnumerable<Zoologico.Models.Planes>
-
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Index</h2>
+<style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    .mao {
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+</style>
+@model IEnumerable<Zoologico.Models.Planes>
+
+
+<h2 class="text-center">Planes Registrados</h2>
+
+<a href="@Url.Action("Create", "Planes")" class="btn btn-outline-dark mao">
+    <i class="icon-pencil icon-white"></i>
+    <span>
+        <strong>Registrar Plan</strong>
+    </span>
+</a>
+
 <table class="table">
     <tr>
+        <th></th>
         <th>
-            @Html.DisplayNameFor(model => model.Nombre_Plan)
+            Id Plan
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Precio_plan)
+            Nombre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Zoologicos.Nombre_Zoologico)
+            Precio
         </th>
+        <th>
+            Nombre Zoologico
+        </th>
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre_Plan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio_plan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Zoologicos.Nombre_Zoologico)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Plan }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id_Plan }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Plan })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Plan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Plan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio_plan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zoologicos.Nombre_Zoologico)
+            </td>
+
+
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id_Plan }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id_Plan }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.Id_Plan }, new { @class = "btn btn-outline-primary" })
+            </td>
+
+
+        </tr>
+    }
 
 </table>

@@ -2,66 +2,85 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Details</h2>
+<style>
+
+
+    .form-group {
+        margin-left: 70px;
+    }
+
+    .float {
+        margin-left: 1000px;
+    }
+
+    .form-actions {
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+
+    .t {
+        margin-bottom: 50px;
+        margin-top: -80px;
+        margin-left: 55px;
+    }
+</style>
 
 <div>
-    <h4>Cliente</h4>
+    <h4 class="text-center">Informacion Del Cliente</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre_Cliente)
-        </dt>
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Cedula</h5>
+                @Html.EditorFor(model => model.Cedula_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Cedula_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre</h5>
+                @Html.EditorFor(model => model.Nombre_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Apellido</h5>
+                @Html.EditorFor(model => model.Apellido_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Apellido_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Dirección</h5>
+                @Html.EditorFor(model => model.Direccion_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Direccion_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Telefono</h5>
+                @Html.EditorFor(model => model.Telefono_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Telefono_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Edad</h5>
+                @Html.EditorFor(model => model.Edad_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Edad_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Password</h5>
+                @Html.EditorFor(model => model.Pass_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Pass_Cliente, "", new { @class = "text-danger" })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre_Cliente)
-        </dd>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <a href="@Url.Action("Index", "Clientes")" class="btn btn-outline-dark">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Cedula_Cliente }, new { @class = "btn btn-outline-info" })
+            </div>
+        </div>
+    </form>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido_Cliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Apellido_Cliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion_Cliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Direccion_Cliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono_Cliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefono_Cliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Edad_Cliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Edad_Cliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pass_Cliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pass_Cliente)
-        </dd>
-
-    </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Cedula_Cliente }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

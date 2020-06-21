@@ -5,48 +5,78 @@
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Index</h2>
+<style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    .mao {
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<h2 class="text-center">Vehiculos Registrados</h2>
+
+
+
+
+<a href="@Url.Action("Create", "Vehiculoes")" class="btn btn-outline-dark mao">
+    <i class="icon-pencil icon-white"></i>
+    <span>
+        <strong>Registrar Vehiculo</strong>
+    </span>
+</a>
+
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo_Vehiculo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Marca_vehiculo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado_Vehiculo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hora_Ingreso_vehiculo)
-        </th>
         <th></th>
+        <th>
+            Placa Vehiculo
+        </th>
+        <th>
+            Tipo Vehiculo
+        </th>
+        <th>
+            Marca
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+            Hora de Ingreso
+        </th>
+        <th>
+
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo_Vehiculo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Marca_vehiculo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado_Vehiculo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hora_Ingreso_vehiculo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Placa_Vehiculo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Placa_Vehiculo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Placa_Vehiculo })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Placa_Vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_Vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca_vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado_Vehiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora_Ingreso_vehiculo)
+            </td>
+
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-primary" })
+            </td>
+
+
+        </tr>
+    }
 
 </table>
