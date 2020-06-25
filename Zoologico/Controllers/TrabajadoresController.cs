@@ -16,7 +16,7 @@ namespace Zoologico.Controllers
         private ZoologicoWebEntities1 db = new ZoologicoWebEntities1();
 
         // GET: Trabajadores
-        [AuthorizeUser(idOperacion:1)]
+        [AuthorizeUser(idOperacion:5)]
         public ActionResult Index()
         {
             var trabajadores = db.Trabajadores.Include(t => t.Rol).Include(t => t.Zonas);
@@ -24,6 +24,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Trabajadores/Details/5
+        [AuthorizeUser(idOperacion: 4)]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +40,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Trabajadores/Create
+        [AuthorizeUser(idOperacion: 1)]
         public ActionResult Create()
         {
             ViewBag.idRol_Trabajador = new SelectList(db.Rol, "id", "nombre");
@@ -66,6 +68,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Trabajadores/Edit/5
+        [AuthorizeUser(idOperacion: 2)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +88,7 @@ namespace Zoologico.Controllers
         // POST: Trabajadores/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id_Trabajador,Cedula_Trabajador,Nombre_Trabajador,Apellido_Trabajador,Telefono_Trabajador,Direccion_Trabajador,Id_Zona,idRol_Trabajador,password_Trabajador,Correo_Trabajador,Edad_Trabajador")] Trabajadores trabajadores)
@@ -101,6 +105,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Trabajadores/Delete/5
+        [AuthorizeUser(idOperacion: 3)]
         public ActionResult Delete(int? id)
         {
             if (id == null)

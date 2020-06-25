@@ -34,19 +34,24 @@ namespace Zoologico.Controllers
                     if (oUser != null && oUser.idRol_Trabajador == 1)
                     {
                         Session["User"] = oUser;
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Trabajadores");
                     }
                     else if (oUser != null && oUser.idRol_Trabajador == 2)
                     {
                         Session["User"] = oUser;
-                        return RedirectToAction("Index", "Animales");
+                        return RedirectToAction("Index", "Trabajadores");
                     }
                     else if (oUser != null && oUser.idRol_Trabajador == 3)
                     {
                         Session["User"] = oUser;
                         return RedirectToAction("Index", "Trabajadores");
                     }
-                    else if(oUser == null )
+                    else if (oUser != null && oUser.idRol_Trabajador == 5)
+                    {
+                        Session["User"] = oUser;
+                        return RedirectToAction("Index", "Trabajadores");
+                    }
+                    else if (db.Cliente != null && oUser == null)
                     {
                         (
                         from e in db.Cliente
@@ -54,16 +59,14 @@ namespace Zoologico.Controllers
                         select e).FirstOrDefault();
                         Session["User"] = oUser;
                         return RedirectToAction("Index", "Compras");
+
                     }
-                    else 
+                    else
                     {
                         ViewBag.Error = "Usuario o contraseña invalida";
                         return View();
                     }
                 }
-
-          
-
                
             }
 
