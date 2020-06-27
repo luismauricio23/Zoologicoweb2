@@ -17,5 +17,22 @@ namespace Zoologico.Controllers
         {
             return View();
         }
+        public ActionResult Trabajadores()
+        {
+            return View();
+        }
+        public ActionResult Supervisores()
+        {
+            return View();
+        }
+        public ActionResult Vendedor()
+        {
+            return View();
+        }
+        public ActionResult Blog()
+        {
+            return View();
+        }
+
     }
 }

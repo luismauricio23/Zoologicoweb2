@@ -123,8 +123,8 @@ namespace Zoologico.Controllers
             }
             base.Dispose(disposing);
         }
-        // GET: Clientes/Create
-        public ActionResult Create2()
+        // GET: Clientes/Registro
+        public ActionResult Registro()
         {
             return View();
         }
@@ -134,7 +134,7 @@ namespace Zoologico.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create2([Bind(Include = "Cedula_Cliente,Nombre_Cliente,Apellido_Cliente,Direccion_Cliente,Telefono_Cliente,Edad_Cliente,Pass_Cliente")] Cliente cliente)
+        public ActionResult Registro([Bind(Include = "Cedula_Cliente,Nombre_Cliente,Apellido_Cliente,Direccion_Cliente,Telefono_Cliente,Edad_Cliente,Pass_Cliente")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {

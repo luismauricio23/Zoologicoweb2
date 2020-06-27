@@ -307,8 +307,19 @@
     <Content Include="Views\Tiquetes\Details.cshtml" />
     <Content Include="Views\Tiquetes\Edit.cshtml" />
     <Content Include="Views\Tiquetes\Index.cshtml" />
-    <Content Include="Views\Clientes\Create2.cshtml" />
     <Content Include="Views\Home\Exitoso.cshtml" />
+    <Content Include="Views\Home\Trabajadores.cshtml" />
+    <Content Include="Views\Home\Supervisores.cshtml" />
+    <Content Include="Views\Home\Vendedor.cshtml" />
+    <Content Include="Views\Shared\_LayoutVistaTrabajadores.cshtml" />
+    <Content Include="Views\Shared\_LayoutVistaVendedor.cshtml" />
+    <Content Include="Views\Shared\_LayoutVistaSupervisores.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Animales\Index2.cshtml" />
+    <Content Include="Views\Animales\Details2.cshtml" />
+    <Content Include="Views\Animales\Edit2.cshtml" />
+    <Content Include="Views\Animales\Create2.cshtml" />
+    <Content Include="Views\Clientes\Registro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

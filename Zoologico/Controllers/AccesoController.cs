@@ -39,17 +39,17 @@ namespace Zoologico.Controllers
                     else if (oUser != null && oUser.idRol_Trabajador == 2)
                     {
                         Session["User"] = oUser;
-                        return RedirectToAction("Index", "Trabajadores");
+                        return RedirectToAction("Trabajadores", "Home");
                     }
                     else if (oUser != null && oUser.idRol_Trabajador == 3)
                     {
                         Session["User"] = oUser;
-                        return RedirectToAction("Index", "Trabajadores");
+                        return RedirectToAction("Vendedor", "Home");
                     }
                     else if (oUser != null && oUser.idRol_Trabajador == 5)
                     {
                         Session["User"] = oUser;
-                        return RedirectToAction("Index", "Trabajadores");
+                        return RedirectToAction("Supervisores", "Home");
                     }
                     else if (db.Cliente != null && oUser == null)
                     {
