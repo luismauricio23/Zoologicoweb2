@@ -1,0 +1,84 @@
+﻿@model Zoologico.Models.Cliente
+@{
+    ViewBag.Title = "Delete2";
+    Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
+}
+
+<style>
+
+    .form-group {
+        margin-left: 70px;
+    }
+
+    .float {
+        margin-left: 1000px;
+    }
+
+
+    .form-actions {
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+
+    .t {
+        margin-bottom: 50px;
+        margin-top: -80px;
+        margin-left: 55px;
+    }
+</style>
+
+<img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
+<div class="alert alert-warning col-md-4 t">
+    <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
+</div>
+<div>
+    <hr />
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Nombre</h5>
+                @Html.EditorFor(model => model.Nombre_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Apellido</h5>
+                @Html.EditorFor(model => model.Apellido_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Apellido_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Dirección</h5>
+                @Html.EditorFor(model => model.Direccion_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Direccion_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Telefono</h5>
+                @Html.EditorFor(model => model.Telefono_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Telefono_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Edad</h5>
+                @Html.EditorFor(model => model.Edad_Cliente, new { htmlAttributes = new { @class = "form-control ", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Edad_Cliente, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Password</h5>
+                @Html.EditorFor(model => model.Pass_Cliente, new { htmlAttributes = new { @class = "form-control ", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Pass_Cliente, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+    </form>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-outline-dark" />
+            @Html.ActionLink("Regresar", "Index2", new { id = Model.Cedula_Cliente }, new { @class = "btn btn-outline-info" })
+        </div>
+    }
+
+</div>
+
+

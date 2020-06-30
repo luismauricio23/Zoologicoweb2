@@ -1,0 +1,64 @@
+﻿@model Zoologico.Models.Planes
+@{
+    ViewBag.Title = "Create2";
+    Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
+}
+<style>
+
+    .form-group {
+        margin-left: 70px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2 class="text-center">Registrar Nuevo Plan</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Id Plan</h5>
+                @Html.EditorFor(model => model.Id_Plan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Id_Plan, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre del Plan</h5>
+                @Html.EditorFor(model => model.Nombre_Plan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Plan, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Precio</h5>
+                @Html.EditorFor(model => model.Precio_plan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Precio_plan, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre Zoologico</h5>
+                @Html.DropDownList("Nit_Zoologico", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Zoologicos.Nit_Zoologico, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-outline-dark" />
+                <a href="@Url.Action("Index2", "Planes")" class="btn btn-outline-dark">
+
+                    <i class="icon-pencil icon-white"></i>
+
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+}
+
+

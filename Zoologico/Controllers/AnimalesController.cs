@@ -207,6 +207,31 @@ namespace Zoologico.Controllers
             ViewBag.Id_Zona = new SelectList(db.Zonas, "Id_Zona", "Nombre_Zona", animales.Id_Zona);
             return View(animales);
         }
+        public ActionResult Delete2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Animales animales = db.Animales.Find(id);
+            if (animales == null)
+            {
+                return HttpNotFound();
+            }
+            return View(animales);
+        }
+
+        // POST: Animales/Delete/5
+        [HttpPost, ActionName("Delete2")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete2Confirmed(string id)
+        {
+            Animales animales = db.Animales.Find(id);
+            db.Animales.Remove(animales);
+            db.SaveChanges();
+            return RedirectToAction("Index2");
+        }
+
 
     }
 }

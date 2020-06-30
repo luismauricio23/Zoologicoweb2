@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Zoologico.Models.Compra>
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
+}
+<style>
+
+    .mao {
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+</style>
+
+<h2 class="text-center">Compras</h2>
+
+
+
+<a href="@Url.Action("Create2", "Compras")" class="btn btn-outline-dark mao">
+    <i class="icon-pencil icon-white"></i>
+    <span>
+        <strong>Registrar Compra</strong>
+    </span>
+</a>
+
+<table class="table">
+    <tr>
+        <th>
+            Numero de Compra
+        </th>
+        <th>
+            Fecha de Compra
+        </th>
+        <th>
+            Cantidad tiquetes
+        </th>
+        <th>
+            Valor
+        </th>
+        <th>
+            Cliente
+        </th>
+        <th>
+            Plan
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero_Compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad_Compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor_Compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Planes.Nombre_Plan)
+            </td>
+
+
+
+            <td>
+                @Html.ActionLink("Editar", "Edit2", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete2", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details2", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-primary" })
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+

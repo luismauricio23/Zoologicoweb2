@@ -320,6 +320,27 @@
     <Content Include="Views\Animales\Edit2.cshtml" />
     <Content Include="Views\Animales\Create2.cshtml" />
     <Content Include="Views\Clientes\Registro.cshtml" />
+    <Content Include="Views\Animales\Delete2.cshtml" />
+    <Content Include="Views\Clientes\Index2.cshtml" />
+    <Content Include="Views\Clientes\Details2.cshtml" />
+    <Content Include="Views\Clientes\Create2.cshtml" />
+    <Content Include="Views\Clientes\Edit2.cshtml" />
+    <Content Include="Views\Clientes\Delete2.cshtml" />
+    <Content Include="Views\Compras\Index2.cshtml" />
+    <Content Include="Views\Compras\Details2.cshtml" />
+    <Content Include="Views\Compras\Create2.cshtml" />
+    <Content Include="Views\Compras\Edit2.cshtml" />
+    <Content Include="Views\Compras\Delete2.cshtml" />
+    <Content Include="Views\Parqueaderoes\Index2.cshtml" />
+    <Content Include="Views\Parqueaderoes\Details2.cshtml" />
+    <Content Include="Views\Parqueaderoes\Create2.cshtml" />
+    <Content Include="Views\Parqueaderoes\Edit2.cshtml" />
+    <Content Include="Views\Parqueaderoes\Delete2.cshtml" />
+    <Content Include="Views\Planes\Index2.cshtml" />
+    <Content Include="Views\Planes\Details2.cshtml" />
+    <Content Include="Views\Planes\Create2.cshtml" />
+    <Content Include="Views\Planes\Edit2.cshtml" />
+    <Content Include="Views\Planes\Delete2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

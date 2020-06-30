@@ -145,5 +145,105 @@ namespace Zoologico.Controllers
 
             return View(cliente);
         }
+        // GET: Clientes
+        public ActionResult Index2()
+        {
+            return View(db.Cliente.ToList());
+        }
+
+        // GET: Clientes/Details/5
+        public ActionResult Details2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cliente cliente = db.Cliente.Find(id);
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
+        }
+
+        // GET: Clientes/Create
+        public ActionResult Create2()
+        {
+            return View();
+        }
+
+        // POST: Clientes/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2([Bind(Include = "Cedula_Cliente,Nombre_Cliente,Apellido_Cliente,Direccion_Cliente,Telefono_Cliente,Edad_Cliente,Pass_Cliente")] Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Cliente.Add(cliente);
+                db.SaveChanges();
+                return RedirectToAction("Index2");
+            }
+
+            return View(cliente);
+        }
+
+        // GET: Clientes/Edit/5
+        public ActionResult Edit2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cliente cliente = db.Cliente.Find(id);
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
+        }
+
+        // POST: Clientes/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit2([Bind(Include = "Cedula_Cliente,Nombre_Cliente,Apellido_Cliente,Direccion_Cliente,Telefono_Cliente,Edad_Cliente,Pass_Cliente")] Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(cliente).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index2");
+            }
+            return View(cliente);
+        }
+
+        // GET: Clientes/Delete/5
+        public ActionResult Delete2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cliente cliente = db.Cliente.Find(id);
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
+        }
+
+        // POST: Clientes/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete2Confirmed(string id)
+        {
+            Cliente cliente = db.Cliente.Find(id);
+            db.Cliente.Remove(cliente);
+            db.SaveChanges();
+            return RedirectToAction("Index2");
+        }
     }
 }
