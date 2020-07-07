@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Zoologico.Filters;
 using Zoologico.Models;
 
 namespace Zoologico.Controllers
@@ -15,6 +16,7 @@ namespace Zoologico.Controllers
         private ZoologicoWebEntities1 db = new ZoologicoWebEntities1();
 
         // GET: Compras
+        [AuthorizeUser(idOperacion: 25)]
         public ActionResult Index()
         {
             var compra = db.Compra.Include(c => c.Cliente).Include(c => c.Planes);
@@ -22,6 +24,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Compras/Details/5
+        [AuthorizeUser(idOperacion: 24)]
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -37,6 +40,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Compras/Create
+        [AuthorizeUser(idOperacion: 21)]
         public ActionResult Create()
         {
             ViewBag.Cedula_Cliente = new SelectList(db.Cliente, "Cedula_Cliente", "Nombre_Cliente");
@@ -64,6 +68,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Compras/Edit/5
+        [AuthorizeUser(idOperacion: 22)]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -99,6 +104,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Compras/Delete/5
+        [AuthorizeUser(idOperacion: 23)]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -133,6 +139,7 @@ namespace Zoologico.Controllers
             base.Dispose(disposing);
         }
         // GET: Compras
+        [AuthorizeUser(idOperacion: 100)]
         public ActionResult Index2()
         {
             var compra = db.Compra.Include(c => c.Cliente).Include(c => c.Planes);
@@ -140,6 +147,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Compras/Details/5
+        [AuthorizeUser(idOperacion: 99)]
         public ActionResult Details2(string id)
         {
             if (id == null)
@@ -155,6 +163,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Compras/Create
+        [AuthorizeUser(idOperacion: 96)]
         public ActionResult Create2()
         {
             ViewBag.Cedula_Cliente = new SelectList(db.Cliente, "Cedula_Cliente", "Nombre_Cliente");
@@ -182,6 +191,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Compras/Edit/5
+        [AuthorizeUser(idOperacion: 97)]
         public ActionResult Edit2(string id)
         {
             if (id == null)
@@ -217,6 +227,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Compras/Delete/5
+        [AuthorizeUser(idOperacion: 98)]
         public ActionResult Delete2(string id)
         {
             if (id == null)
