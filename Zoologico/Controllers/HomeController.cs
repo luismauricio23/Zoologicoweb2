@@ -33,6 +33,10 @@ namespace Zoologico.Controllers
         {
             return View();
         }
+        public ActionResult informacionZ()
+        {
+            return View();
+        }
 
     }
 }

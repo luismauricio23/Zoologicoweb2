@@ -102,8 +102,12 @@
     <Content Include="Library\Bootstrap\popper.min.js" />
     <Content Include="Library\fortawesome\fontawesome.css" />
     <Content Include="Library\jquery\jquery-3.3.1.slim.min.js" />
+    <Content Include="Library\js\Map.js" />
     <Content Include="Library\style\Login.css" />
     <Content Include="Library\style\main.css" />
+    <Content Include="Library\style\NabColor.css" />
+    <Content Include="Library\style\SocialRedes.css" />
+    <Content Include="Library\style\Workers.css" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -341,6 +345,7 @@
     <Content Include="Views\Planes\Create2.cshtml" />
     <Content Include="Views\Planes\Edit2.cshtml" />
     <Content Include="Views\Planes\Delete2.cshtml" />
+    <Content Include="Views\Home\informacionZ.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

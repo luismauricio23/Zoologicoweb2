@@ -4,12 +4,8 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
-<style>
-    .form-group {
-        margin-left: 70px;
-    }
-</style>
-
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
+<br />
 
 @using (Html.BeginForm())
 {
@@ -21,60 +17,60 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id_Animal)
-    <div class="form-row">
-        <div class="form-group col-md-5">
-            <h5>Identificador</h5>
-            @Html.EditorFor(model => model.Id_Animal, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Id_Animal, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group col-md-5">
-            <h5>Nombre</h5>
-            @Html.EditorFor(model => model.Nombre_Animal, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Nombre_Animal, "", new { @class = "text-danger" })
-        </div>
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Identificador</h5>
+                @Html.EditorFor(model => model.Id_Animal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Id_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre</h5>
+                @Html.EditorFor(model => model.Nombre_Animal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Animal, "", new { @class = "text-danger" })
+            </div>
 
-        <div class="form-group col-md-5">
-            <h5>Especie</h5>
-            @Html.EditorFor(model => model.Especie_Animal, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Especie_Animal, "", new { @class = "text-danger", @readonly = "readonly" })
-        </div>
-        <div class="form-group col-md-5">
-            <h5>Categoria</h5>
-            @Html.EditorFor(model => model.Categoria_Animal, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Categoria_Animal, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group col-md-5">
-            <h5>Zona</h5>
-            @Html.DropDownList("Id_Zona", null, htmlAttributes: new { @class = "form-control " })
-            @Html.ValidationMessageFor(model => model.Id_Zona, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group col-md-5">
-            <h5>Edad</h5>
-            @Html.EditorFor(model => model.Edad_Animal, new { htmlAttributes = new { @class = "form-control " } })
-            @Html.ValidationMessageFor(model => model.Edad_Animal, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group col-md-5">
-            <h5>Descripcion</h5>
-            @Html.EditorFor(model => model.Descripcion_Animal, new { htmlAttributes = new { @class = "form-control " } })
-            @Html.ValidationMessageFor(model => model.Descripcion_Animal, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group col-md-5">
-            <h5>Nombre Cientifico</h5>
-            @Html.EditorFor(model => model.Nombre_Cientifico_Animal, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Nombre_Cientifico_Animal, "", new { @class = "text-danger" })
-        </div>
-        <div class="form-group col-md-5">
-            <h5>Tiempo en el Zoologico</h5>
-            @Html.EditorFor(model => model.Tiempo_Zoologico, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Tiempo_Zoologico, "", new { @class = "text-danger" })
-        </div>
+            <div class="form-group col-md-5">
+                <h5>Especie</h5>
+                @Html.EditorFor(model => model.Especie_Animal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Especie_Animal, "", new { @class = "text-danger", @readonly = "readonly" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Categoria</h5>
+                @Html.EditorFor(model => model.Categoria_Animal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Categoria_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Zona</h5>
+                @Html.DropDownList("Id_Zona", null, htmlAttributes: new { @class = "form-control " })
+                @Html.ValidationMessageFor(model => model.Id_Zona, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Edad</h5>
+                @Html.EditorFor(model => model.Edad_Animal, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.Edad_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Descripcion</h5>
+                @Html.EditorFor(model => model.Descripcion_Animal, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.Descripcion_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre Cientifico</h5>
+                @Html.EditorFor(model => model.Nombre_Cientifico_Animal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Cientifico_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Tiempo en el Zoologico</h5>
+                @Html.EditorFor(model => model.Tiempo_Zoologico, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tiempo_Zoologico, "", new { @class = "text-danger" })
+            </div>
 
-    </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
                 <input type="submit" value="Guardar" class="btn btn-outline-dark" />
-                <a href="@Url.Action("Index", "Animales")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index", "Animales")" class="btn btn-success">
                     <i class="icon-pencil icon-white"></i>
                     <span>
                         <strong>Regresar</strong>

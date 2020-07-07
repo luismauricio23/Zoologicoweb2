@@ -5,26 +5,7 @@
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<style>
-    .form-group {
-        margin-left: 70px;
-    }
-
-    .float {
-        margin-left: 1000px;
-    }
-
-    .form-actions {
-        margin-left: 70px;
-        margin-top: 15px;
-    }
-
-    .t {
-        margin-bottom: 50px;
-        margin-top: -80px;
-        margin-left: 55px;
-    }
-</style>
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
 <img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
 <div class="alert alert-warning col-md-4 t">
     <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
@@ -50,7 +31,7 @@
             </div>
             <div class="form-group col-md-5">
                 <h5>veterinario</h5>
-                @Html.EditorFor(model => model.Veterinario.Nombre_Veterinario, new { htmlAttributes= new { @class = "form-control", @readonly = "readonly" }})
+                @Html.EditorFor(model => model.Veterinario.Nombre_Veterinario, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Cedula_Veterinario, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">

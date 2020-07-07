@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Zoologico.Filters;
 using Zoologico.Models;
 
 namespace Zoologico.Controllers
@@ -15,6 +16,7 @@ namespace Zoologico.Controllers
         private ZoologicoWebEntities1 db = new ZoologicoWebEntities1();
 
         // GET: Tiquetes
+        [AuthorizeUser(idOperacion: 60)]
         public ActionResult Index()
         {
             var tiquete = db.Tiquete.Include(t => t.Parqueadero).Include(t => t.Vehiculo);
@@ -22,6 +24,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Tiquetes/Details/5
+        [AuthorizeUser(idOperacion: 59)]
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -37,6 +40,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Tiquetes/Create
+        [AuthorizeUser(idOperacion: 56)]
         public ActionResult Create()
         {
             ViewBag.Id_Parqueadero = new SelectList(db.Parqueadero, "Id_Parqueadero", "Nombre_Parqueadero");
@@ -64,6 +68,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Tiquetes/Edit/5
+        [AuthorizeUser(idOperacion: 57)]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -99,6 +104,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Tiquetes/Delete/5
+        [AuthorizeUser(idOperacion: 58)]
         public ActionResult Delete(string id)
         {
             if (id == null)

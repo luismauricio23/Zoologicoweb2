@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Zoologico.Filters;
 using Zoologico.Models;
 
 namespace Zoologico.Controllers
@@ -15,12 +16,14 @@ namespace Zoologico.Controllers
         private ZoologicoWebEntities1 db = new ZoologicoWebEntities1();
 
         // GET: Clientes
+        [AuthorizeUser(idOperacion: 20)]
         public ActionResult Index()
         {
             return View(db.Cliente.ToList());
         }
 
         // GET: Clientes/Details/5
+        [AuthorizeUser(idOperacion: 19)]
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -36,6 +39,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Clientes/Create
+        [AuthorizeUser(idOperacion: 16)]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +63,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Clientes/Edit/5
+        [AuthorizeUser(idOperacion: 17)]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -90,6 +95,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Clientes/Delete/5
+        [AuthorizeUser(idOperacion: 18)]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -146,12 +152,14 @@ namespace Zoologico.Controllers
             return View(cliente);
         }
         // GET: Clientes
+        [AuthorizeUser(idOperacion: 95)]
         public ActionResult Index2()
         {
             return View(db.Cliente.ToList());
         }
 
         // GET: Clientes/Details/5
+        [AuthorizeUser(idOperacion: 94)]
         public ActionResult Details2(string id)
         {
             if (id == null)
@@ -167,6 +175,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Clientes/Create
+        [AuthorizeUser(idOperacion: 91)]
         public ActionResult Create2()
         {
             return View();
@@ -190,6 +199,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Clientes/Edit/5
+        [AuthorizeUser(idOperacion: 92)]
         public ActionResult Edit2(string id)
         {
             if (id == null)
@@ -221,6 +231,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Clientes/Delete/5
+        [AuthorizeUser(idOperacion: 93)]
         public ActionResult Delete2(string id)
         {
             if (id == null)

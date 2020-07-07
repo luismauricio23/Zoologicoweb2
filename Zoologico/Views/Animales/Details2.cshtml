@@ -4,80 +4,80 @@
     Layout = "~/Views/Shared/_LayoutVistaTrabajadores.cshtml";
 }
 
-<h2>Details2</h2>
-<h2>Details</h2>
+<link href="~/Library/style/NabColor.css" rel="stylesheet" />
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
+
+<img src="~/Library/Imagenes/hojaAnimales.jpg" width="100%" height="500px">
 
 <div>
-    <h4>Animales</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre_Animal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre_Animal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Especie_Animal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Especie_Animal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Categoria_Animal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Categoria_Animal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Edad_Animal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Edad_Animal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion_Animal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion_Animal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre_Cientifico_Animal)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre_Cientifico_Animal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tiempo_Zoologico)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tiempo_Zoologico)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Zonas.Nombre_Zona)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Zonas.Nombre_Zona)
-        </dd>
-
-    </dl>
+    <a align:center><img class="bd-placeholder-img rounded-circle pos" src="~/Library/Imagenes/tigre.jpg" width="140" height="140" alin></a>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit2", new { id = Model.Id_Animal }) |
-    @Html.ActionLink("Back to List", "Index2")
-</p>
+<br />
+<br />
+<br />
+<div>
+
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Id</h5>
+                @Html.EditorFor(model => model.Id_Animal, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Id_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre</h5>
+                @Html.EditorFor(model => model.Nombre_Animal, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Especie</h5>
+                @Html.EditorFor(model => model.Especie_Animal, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Especie_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Categoria</h5>
+                @Html.EditorFor(model => model.Categoria_Animal, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Categoria_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Zona</h5>
+                @Html.EditorFor(model => model.Id_Zona, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Id_Zona, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Edad</h5>
+                @Html.EditorFor(model => model.Edad_Animal, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Edad_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Descripcion</h5>
+                @Html.EditorFor(model => model.Descripcion_Animal, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Descripcion_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre Cientifico</h5>
+                @Html.EditorFor(model => model.Nombre_Cientifico_Animal, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Cientifico_Animal, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Tiempo en Zolologico</h5>
+                @Html.EditorFor(model => model.Tiempo_Zoologico, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Tiempo_Zoologico, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <a href="@Url.Action("Index2", "Animales")" class="btn btn-success">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
+                @Html.ActionLink("Editar", "Edit2", new { id = Model.Id_Animal }, new { @class = "btn btn-outline-dark" })
+            </div>
+        </div>
+    </form>
+
+
+</div>

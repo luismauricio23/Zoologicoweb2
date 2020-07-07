@@ -1,0 +1,102 @@
+﻿@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?djfznw');
+    src: url('fonts/icomoon.eot?djfznw#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?djfznw') format('truetype'), url('fonts/icomoon.woff?djfznw') format('woff'), url('fonts/icomoon.svg?djfznw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+    content: "\ea90";
+}
+
+.icon-instagram:before {
+    content: "\ea92";
+}
+
+.icon-twitter:before {
+    content: "\ea96";
+}
+
+.social {
+    position: fixed;
+    /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+    left: -40px;
+    /* Establecemos la barra en la izquierda */
+    top: 200px;
+    /* Bajamos la barra 200px de arriba a abajo */
+    z-index: 2000;
+    /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+    .social ul {
+        list-style: none;
+    }
+
+        .social ul li a {
+            display: inline-block;
+            color: #fff;
+            background: #000;
+            padding: 10px 15px;
+            text-decoration: none;
+            -webkit-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+            /* Establecemos una transición a todas las propiedades */
+        }
+
+        .social ul li .icon-facebook {
+            background: #3b5998;
+        }
+
+
+        /* Establecemos los colores de cada red social, aprovechando su class */
+
+        .social ul li .icon-twitter {
+            background: #00abf0;
+        }
+
+        .social ul li .icon-instagram {
+            background: #d95232;
+        }
+
+        .social ul li a:hover {
+            background: #000;
+            /* Cambiamos el fondo cuando el usuario pase el mouse */
+            padding: 10px 30px;
+            /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+        }
+
+.footer {
+    clear: both;
+    background-color: #ffc400;
+    width: 100%;
+    height: 60px;
+    font-family: Times;
+    position: relative;
+    float: left;
+}
+
+#map {
+    height: 400px;
+    width: 550px;
+}
+.mm {
+    margin-top: 50px;
+}

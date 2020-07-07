@@ -5,20 +5,15 @@
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
- <style>
- .mao {
- margin-left: 30px;
- margin-bottom: 20px;
- }
-</style>
-    <h2 class="text-center">Modelo Empleados</h2>
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
+<h2 class="text-center">Modelo Empleados</h2>
 
-    <a href="@Url.Action("Create", "Modeloes")" class="btn btn-outline-dark mao">
-        <i class="icon-pencil icon-white"></i>
-        <span>
-            <strong>Nuevo Modelo</strong>
-        </span>
-    </a>
+<a href="@Url.Action("Create", "Modeloes")" class="btn btn-outline-dark mao">
+    <i class="icon-pencil icon-white"></i>
+    <span>
+        <strong>Nuevo Modelo</strong>
+    </span>
+</a>
 <table class="table">
     <tr>
         <th>
@@ -28,31 +23,31 @@
             <h5>Nombre</h5>
         </th>
         <th>
-           
+
         </th>
         <th>
-           
+
         </th>
 
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.id)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.nombre)
-    </td>
-    <td>
-        @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { @class = "btn btn-outline-info" })
-        @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "btn btn-outline-danger" })
-        @Html.ActionLink("Detalle", "Details", new { id = item.id }, new { @class = "btn btn-outline-primary" })
-    </td>
-    <td>
-
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.id }, new { @class = "btn btn-outline-primary" })
+            </td>
+            <td>
+            </td>
+        </tr>
+    }
 
 </table>

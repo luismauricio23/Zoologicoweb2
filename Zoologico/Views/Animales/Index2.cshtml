@@ -4,16 +4,11 @@
     Layout = "~/Views/Shared/_LayoutVistaTrabajadores.cshtml";
 }
 
-<style>
-    .mao {
-        margin-left: 30px;
-        margin-bottom: 20px;
-    }
-</style>
-
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
+<br />
 <h2 class="text-center">Animales Registrados</h2>
 
-<a href="@Url.Action("Create2", "Animales")" class="btn btn-outline-dark mao">
+<a href="@Url.Action("Create2", "Animales")" class="btn btn-success mao">
     <i class="icon-pencil icon-white"></i>
     <span>
         <strong>Registrar Nuevo Animal</strong>
@@ -61,9 +56,9 @@
         @Html.DisplayFor(modelItem => item.Zonas.Nombre_Zona)
     </td>
     <td>
-        @Html.ActionLink("Editar", "Edit2", new { id = item.Id_Animal }, new { @class = "btn btn-outline-info" })
-        @Html.ActionLink("Eliminar", "Delete2", new { id = item.Id_Animal }, new { @class = "btn btn-outline-danger" })
-        @Html.ActionLink("Hoja de Vida", "Details2", new { id = item.Id_Animal }, new { @class = "btn btn-outline-primary" })
+        @Html.ActionLink("Editar", "Edit2", new { id = item.Id_Animal }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Eliminar", "Delete2", new { id = item.Id_Animal }, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Hoja de Vida", "Details2", new { id = item.Id_Animal }, new { @class = "btn btn-success" })
     </td>
 </tr>
     }

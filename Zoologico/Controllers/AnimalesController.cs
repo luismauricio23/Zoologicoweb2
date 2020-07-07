@@ -134,12 +134,13 @@ namespace Zoologico.Controllers
             }
             base.Dispose(disposing);
         }
-
+        [AuthorizeUser(idOperacion: 85)]
         public ActionResult Index2()
         {
             var animales = db.Animales.Include(a => a.Zonas);
             return View(animales.ToList());
         }
+        [AuthorizeUser(idOperacion: 84)]
         public ActionResult Details2(string id)
         {
             if (id == null)
@@ -153,6 +154,7 @@ namespace Zoologico.Controllers
             }
             return View(animales);
         }
+        [AuthorizeUser(idOperacion: 81)]
         public ActionResult Create2()
         {
             ViewBag.Id_Zona = new SelectList(db.Zonas, "Id_Zona", "Nombre_Zona");
@@ -176,6 +178,7 @@ namespace Zoologico.Controllers
             ViewBag.Id_Zona = new SelectList(db.Zonas, "Id_Zona", "Nombre_Zona", animales.Id_Zona);
             return View(animales);
         }
+        [AuthorizeUser(idOperacion: 82)]
         public ActionResult Edit2(string id)
         {
             if (id == null)
@@ -207,6 +210,7 @@ namespace Zoologico.Controllers
             ViewBag.Id_Zona = new SelectList(db.Zonas, "Id_Zona", "Nombre_Zona", animales.Id_Zona);
             return View(animales);
         }
+        [AuthorizeUser(idOperacion: 83)]
         public ActionResult Delete2(string id)
         {
             if (id == null)

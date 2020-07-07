@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Zoologico.Filters;
 using Zoologico.Models;
 
 namespace Zoologico.Controllers
@@ -15,6 +16,7 @@ namespace Zoologico.Controllers
         private ZoologicoWebEntities1 db = new ZoologicoWebEntities1();
 
         // GET: Planes
+        [AuthorizeUser(idOperacion: 45)]
         public ActionResult Index()
         {
             var planes = db.Planes.Include(p => p.Zoologicos);
@@ -22,6 +24,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Planes/Details/5
+        [AuthorizeUser(idOperacion: 44)]
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -37,6 +40,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Planes/Create
+        [AuthorizeUser(idOperacion: 41)]
         public ActionResult Create()
         {
             ViewBag.Nit_Zoologico = new SelectList(db.Zoologicos, "Nit_Zoologico", "Nombre_Zoologico");
@@ -62,6 +66,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Planes/Edit/5
+        [AuthorizeUser(idOperacion: 42)]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -95,6 +100,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Planes/Delete/5
+        [AuthorizeUser(idOperacion: 43)]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -129,6 +135,7 @@ namespace Zoologico.Controllers
             base.Dispose(disposing);
         }
         // GET: Planes
+        [AuthorizeUser(idOperacion: 110)]
         public ActionResult Index2()
         {
             var planes = db.Planes.Include(p => p.Zoologicos);
@@ -136,6 +143,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Planes/Details/5
+        [AuthorizeUser(idOperacion: 109)]
         public ActionResult Details2(string id)
         {
             if (id == null)
@@ -151,6 +159,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Planes/Create
+        [AuthorizeUser(idOperacion: 106)]
         public ActionResult Create2()
         {
             ViewBag.Nit_Zoologico = new SelectList(db.Zoologicos, "Nit_Zoologico", "Nombre_Zoologico");
@@ -176,6 +185,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Planes/Edit/5
+        [AuthorizeUser(idOperacion: 107)]
         public ActionResult Edit2(string id)
         {
             if (id == null)
@@ -209,6 +219,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Planes/Delete/5
+        [AuthorizeUser(idOperacion: 108)]
         public ActionResult Delete2(string id)
         {
             if (id == null)

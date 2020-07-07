@@ -4,12 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
-<style>
-    .mao {
-        margin-left: 30px;
-        margin-bottom: 20px;
-    }
-</style>
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
 
 <h2 class="text-center">Citas Asignadas</h2>
 
@@ -47,34 +42,34 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Codigo_Cita)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Hora_inicio_Cita)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Hora_fin_Cita)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Diagnostico_Cita)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Observaciones)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Animales.Nombre_Animal)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Veterinario.Nombre_Veterinario)
-    </td>
-    <td>
-        @Html.ActionLink("Editar", "Edit", new { id = item.Codigo_Cita }, new { @class = "btn btn-outline-info" })
-        @Html.ActionLink("Eliminar", "Delete", new { id = item.Codigo_Cita }, new { @class = "btn btn-outline-danger" })
-        @Html.ActionLink("Detalle", "Details", new { id = item.Codigo_Cita }, new { @class = "btn btn-outline-primary" })
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo_Cita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora_inicio_Cita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora_fin_Cita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diagnostico_Cita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animales.Nombre_Animal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Veterinario.Nombre_Veterinario)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Codigo_Cita }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Codigo_Cita }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.Codigo_Cita }, new { @class = "btn btn-outline-primary" })
+            </td>
+        </tr>
     }
 
 </table>

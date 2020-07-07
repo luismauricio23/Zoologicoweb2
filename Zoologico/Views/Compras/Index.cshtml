@@ -6,13 +6,7 @@
 }
 
 
-<style>
-
-    .mao {
-        margin-left: 30px;
-        margin-bottom: 20px;
-    }
-</style>
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
 
 <h2 class="text-center">Compras</h2>
 
@@ -50,36 +44,36 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Numero_Compra)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Fecha_Compra)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Cantidad_Compra)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Valor_Compra)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Cliente.Nombre_Cliente)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Planes.Nombre_Plan)
-    </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero_Compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad_Compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor_Compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Planes.Nombre_Plan)
+            </td>
 
 
 
-    <td>
-        @Html.ActionLink("Editar", "Edit", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-info" })
-        @Html.ActionLink("Eliminar", "Delete", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-danger" })
-        @Html.ActionLink("Detalle", "Details", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-primary" })
-    </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.Numero_Compra }, new { @class = "btn btn-outline-primary" })
+            </td>
 
 
-</tr>
+        </tr>
     }
 
 </table>
