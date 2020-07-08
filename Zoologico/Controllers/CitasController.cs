@@ -138,5 +138,114 @@ namespace Zoologico.Controllers
             }
             base.Dispose(disposing);
         }
+        // GET: Citas
+        public ActionResult Index2()
+        {
+            var citas = db.Citas.Include(c => c.Animales).Include(c => c.Veterinario);
+            return View(citas.ToList());
+        }
+
+        // GET: Citas/Details/5
+        public ActionResult Details2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Citas citas = db.Citas.Find(id);
+            if (citas == null)
+            {
+                return HttpNotFound();
+            }
+            return View(citas);
+        }
+
+        // GET: Citas/Create
+        public ActionResult Create2()
+        {
+            ViewBag.Id_Animal = new SelectList(db.Animales, "Id_Animal", "Nombre_Animal");
+            ViewBag.Cedula_Veterinario = new SelectList(db.Veterinario, "Cedula_Veterinario", "Nombre_Veterinario");
+            return View();
+        }
+
+        // POST: Citas/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2([Bind(Include = "Codigo_Cita,Hora_inicio_Cita,Hora_fin_Cita,Diagnostico_Cita,Observaciones,Cedula_Veterinario,Id_Animal")] Citas citas)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Citas.Add(citas);
+                db.SaveChanges();
+                return RedirectToAction("Index2");
+            }
+
+            ViewBag.Id_Animal = new SelectList(db.Animales, "Id_Animal", "Nombre_Animal", citas.Id_Animal);
+            ViewBag.Cedula_Veterinario = new SelectList(db.Veterinario, "Cedula_Veterinario", "Nombre_Veterinario", citas.Cedula_Veterinario);
+            return View(citas);
+        }
+
+        // GET: Citas/Edit/5
+        public ActionResult Edit2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Citas citas = db.Citas.Find(id);
+            if (citas == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Id_Animal = new SelectList(db.Animales, "Id_Animal", "Nombre_Animal", citas.Id_Animal);
+            ViewBag.Cedula_Veterinario = new SelectList(db.Veterinario, "Cedula_Veterinario", "Nombre_Veterinario", citas.Cedula_Veterinario);
+            return View(citas);
+        }
+
+        // POST: Citas/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit2([Bind(Include = "Codigo_Cita,Hora_inicio_Cita,Hora_fin_Cita,Diagnostico_Cita,Observaciones,Cedula_Veterinario,Id_Animal")] Citas citas)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(citas).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index2");
+            }
+            ViewBag.Id_Animal = new SelectList(db.Animales, "Id_Animal", "Nombre_Animal", citas.Id_Animal);
+            ViewBag.Cedula_Veterinario = new SelectList(db.Veterinario, "Cedula_Veterinario", "Nombre_Veterinario", citas.Cedula_Veterinario);
+            return View(citas);
+        }
+
+        // GET: Citas/Delete/5
+        public ActionResult Delete2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Citas citas = db.Citas.Find(id);
+            if (citas == null)
+            {
+                return HttpNotFound();
+            }
+            return View(citas);
+        }
+
+        // POST: Citas/Delete/5
+        [HttpPost, ActionName("Delete2")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete2Confirmed(string id)
+        {
+            Citas citas = db.Citas.Find(id);
+            db.Citas.Remove(citas);
+            db.SaveChanges();
+            return RedirectToAction("Index2");
+        }
     }
 }

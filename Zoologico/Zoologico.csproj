@@ -106,6 +106,7 @@
     <Content Include="Library\style\Login.css" />
     <Content Include="Library\style\main.css" />
     <Content Include="Library\style\NabColor.css" />
+    <Content Include="Library\style\Registro.css" />
     <Content Include="Library\style\SocialRedes.css" />
     <Content Include="Library\style\Workers.css" />
     <Content Include="Models\Model.Context.tt">
@@ -346,6 +347,26 @@
     <Content Include="Views\Planes\Edit2.cshtml" />
     <Content Include="Views\Planes\Delete2.cshtml" />
     <Content Include="Views\Home\informacionZ.cshtml" />
+    <Content Include="Views\Tiquetes\Index2.cshtml" />
+    <Content Include="Views\Tiquetes\Details2.cshtml" />
+    <Content Include="Views\Tiquetes\Create2.cshtml" />
+    <Content Include="Views\Tiquetes\Edit2.cshtml" />
+    <Content Include="Views\Tiquetes\Delete2.cshtml" />
+    <Content Include="Views\Vehiculoes\Index2.cshtml" />
+    <Content Include="Views\Vehiculoes\Details2.cshtml" />
+    <Content Include="Views\Vehiculoes\Create2.cshtml" />
+    <Content Include="Views\Vehiculoes\Edit2.cshtml" />
+    <Content Include="Views\Vehiculoes\Delete2.cshtml" />
+    <Content Include="Views\Zonas\Index2.cshtml" />
+    <Content Include="Views\Zonas\Details2.cshtml" />
+    <Content Include="Views\Zonas\Create2.cshtml" />
+    <Content Include="Views\Zonas\Edit2.cshtml" />
+    <Content Include="Views\Zonas\Delete2.cshtml" />
+    <Content Include="Views\Citas\Index2.cshtml" />
+    <Content Include="Views\Citas\Details2.cshtml" />
+    <Content Include="Views\Citas\Create2.cshtml" />
+    <Content Include="Views\Citas\Edit2.cshtml" />
+    <Content Include="Views\Citas\Delete2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

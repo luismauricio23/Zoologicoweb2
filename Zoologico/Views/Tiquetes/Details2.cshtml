@@ -1,17 +1,14 @@
 ﻿@model Zoologico.Models.Tiquete
 
 @{
-    ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+    ViewBag.Title = "Details2";
+    Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
 
 <link href="~/Library/style/Workers.css" rel="stylesheet" />
 
-<img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
-<div class="alert alert-warning col-md-4 t">
-    <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
-</div>
 <div>
+    <h4 class="text-center">Informacion de la Compra</h4>
     <hr />
     <form class="label">
         <div class="form-row">
@@ -26,19 +23,19 @@
                 @Html.ValidationMessageFor(model => model.Hora_Ingreso_Tiquete, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Hora de Salida</h5>
+                <h5>Hora Salida</h5>
                 @Html.EditorFor(model => model.Hora_salida_Tiquete, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Hora_salida_Tiquete, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Valor hora Tiquete</h5>
+                <h5>Valor Tiquete</h5>
                 @Html.EditorFor(model => model.Valor_Hora_Tiquete, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Valor_Hora_Tiquete, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Nombre Parqueadero</h5>
+                <h5>Nombre parqueadero</h5>
                 @Html.EditorFor(model => model.Parqueadero.Nombre_Parqueadero, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                @Html.ValidationMessageFor(model => model.Id_Parqueadero, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Parqueadero.Nombre_Parqueadero, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
                 <h5>Tipo de Vehiculo</h5>
@@ -46,18 +43,19 @@
                 @Html.ValidationMessageFor(model => model.Vehiculo.Tipo_Vehiculo, "", new { @class = "text-danger" })
             </div>
 
-
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <a href="@Url.Action("Index2", "Tiquetes")" class="btn btn-outline-dark">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
+                @Html.ActionLink("Editar", "Edit2", new { id = Model.Numero_Tiquete }, new { @class = "btn btn-outline-info" })
+            </div>
         </div>
     </form>
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-dark" />
-            @Html.ActionLink("Regresar", "Index", new { id = Model.Numero_Tiquete }, new { @class = "btn btn-outline-info" })
-        </div>
-    }
-
 </div>
+

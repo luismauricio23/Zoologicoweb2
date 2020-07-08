@@ -5,55 +5,56 @@
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<h2>Details</h2>
+
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
 
 <div>
-    <h4>Tiquete</h4>
+    <h4 class="text-center">Informacion de la Compra</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Hora_Ingreso_Tiquete)
-        </dt>
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Número de tiquete</h5>
+                @Html.EditorFor(model => model.Numero_Tiquete, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Numero_Tiquete, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Hora de Ingreso</h5>
+                @Html.EditorFor(model => model.Hora_Ingreso_Tiquete, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Hora_Ingreso_Tiquete, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Hora Salida</h5>
+                @Html.EditorFor(model => model.Hora_salida_Tiquete, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Hora_salida_Tiquete, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Valor Tiquete</h5>
+                @Html.EditorFor(model => model.Valor_Hora_Tiquete, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Valor_Hora_Tiquete, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre parqueadero</h5>
+                @Html.EditorFor(model => model.Parqueadero.Nombre_Parqueadero, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Parqueadero.Nombre_Parqueadero, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Tipo de Vehiculo</h5>
+                @Html.EditorFor(model => model.Vehiculo.Tipo_Vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Vehiculo.Tipo_Vehiculo, "", new { @class = "text-danger" })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Hora_Ingreso_Tiquete)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Hora_salida_Tiquete)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Hora_salida_Tiquete)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Valor_Hora_Tiquete)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Valor_Hora_Tiquete)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Parqueadero.Nombre_Parqueadero)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Parqueadero.Nombre_Parqueadero)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Vehiculo.Tipo_Vehiculo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Vehiculo.Tipo_Vehiculo)
-        </dd>
-
-    </dl>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <a href="@Url.Action("Index", "Tiquetes")" class="btn btn-outline-dark">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Numero_Tiquete }, new { @class = "btn btn-outline-info" })
+            </div>
+        </div>
+    </form>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Numero_Tiquete }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

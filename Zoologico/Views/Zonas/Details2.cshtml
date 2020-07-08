@@ -1,0 +1,45 @@
+﻿@model Zoologico.Models.Zonas
+@{
+    ViewBag.Title = "Details2";
+    Layout = "~/Views/Shared/_LayoutVistaTrabajadores.cshtml";
+}
+
+    <link href="~/Library/style/Workers.css" rel="stylesheet" />
+
+
+<div>
+    <h4 class="text-center">Detalle de la Zona</h4>
+    <hr />
+    <form class="label">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Identificador</h5>
+                @Html.EditorFor(model => model.Id_Zona, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Id_Zona, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre </h5>
+                @Html.EditorFor(model => model.Nombre_Zona, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Nombre_Zona, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-5">
+                <h5>Nombre de Rol</h5>
+                @Html.EditorFor(model => model.Zoologicos.Nombre_Zoologico, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Zoologicos.Nombre_Zoologico, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </form>
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-10">
+            <a href="@Url.Action("Index2", "Zonas")" class="btn btn-outline-dark">
+                <i class="icon-pencil icon-white"></i>
+                <span>
+                    <strong>Regresar</strong>
+                </span>
+            </a>
+            @Html.ActionLink("Editar", "Edit2", new { id = Model.Id_Zona }, new { @class = "btn btn-outline-info" })
+        </div>
+    </div>
+</div>
+
+

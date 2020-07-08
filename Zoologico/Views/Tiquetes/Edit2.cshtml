@@ -1,51 +1,50 @@
-﻿@model Zoologico.Models.Tiquete
+﻿
+@model Zoologico.Models.Tiquete
 
 @{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+    ViewBag.Title = "Edit2";
+    Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
-    <link href="~/Library/style/Workers.css" rel="stylesheet" />
+
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
+
     <form>
-        <h4 class="text-center">Registrar Nuevo Tiquete</h4>
+        <h4 class="text-center">Modificar Tiquete</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
+        @Html.HiddenFor(model => model.Numero_Tiquete)
         <div class="form-row">
-
-            <div class="form-group col-md-5">
-                <h5>Numero de Tiquete</h5>
-                @Html.EditorFor(model => model.Numero_Tiquete, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Numero_Tiquete, "", new { @class = "text-danger" })
-            </div>
             <div class="form-group col-md-5">
                 <h5>Hora Ingreso</h5>
                 @Html.EditorFor(model => model.Hora_Ingreso_Tiquete, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Hora_Ingreso_Tiquete, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Hora de Salida</h5>
+                <h5>Hora Salida</h5>
                 @Html.EditorFor(model => model.Hora_salida_Tiquete, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Hora_salida_Tiquete, "", new { @class = "text-danger" })
             </div>
+
             <div class="form-group col-md-5">
-                <h5>Valor por Hora</h5>
+                <h5>Valor Hora</h5>
                 @Html.EditorFor(model => model.Valor_Hora_Tiquete, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Valor_Hora_Tiquete, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Valor_Hora_Tiquete, "", new { @class = "text-danger", @readonly = "readonly" })
             </div>
             <div class="form-group col-md-5">
                 <h5>Nombre Parqueadero</h5>
                 @Html.DropDownList("Id_Parqueadero", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Parqueadero.Nombre_Parqueadero, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Id_Parqueadero, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
                 <h5>Placa Vehiculo</h5>
                 @Html.DropDownList("Placa_Vehiculo", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Vehiculo.Placa_Vehiculo, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Placa_Vehiculo, "", new { @class = "text-danger" })
             </div>
 
         </div>
@@ -53,14 +52,16 @@
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
                 <input type="submit" value="Guardar" class="btn btn-outline-dark" />
-                <a href="@Url.Action("Index", "Tiquetes")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index2", "Tiquetes")" class="btn btn-outline-dark">
                     <i class="icon-pencil icon-white"></i>
                     <span>
                         <strong>Regresar</strong>
                     </span>
                 </a>
             </div>
+
         </div>
 
     </form>
+
 }

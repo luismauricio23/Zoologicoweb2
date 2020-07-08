@@ -1,11 +1,9 @@
 ﻿@model Zoologico.Models.Vehiculo
-
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+    ViewBag.Title = "Details2";
+    Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
-
-<link href="~/Library/style/Workers.css" rel="stylesheet" />
+    <link href="~/Library/style/Workers.css" rel="stylesheet" />
 
 <div>
     <h2 class="text-center">Informacion Del Vehiculo</h2>
@@ -41,15 +39,18 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
-                <a href="@Url.Action("Index", "Vehiculoes")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index2", "Vehiculoes")" class="btn btn-outline-dark">
                     <i class="icon-pencil icon-white"></i>
                     <span>
                         <strong>Regresar</strong>
                     </span>
                 </a>
-                @Html.ActionLink("Editar", "Edit", new { id = Model.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Editar", "Edit2", new { id = Model.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
             </div>
         </div>
     </form>
 
 </div>
+
+
+

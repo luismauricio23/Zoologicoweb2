@@ -129,5 +129,106 @@ namespace Zoologico.Controllers
             }
             base.Dispose(disposing);
         }
+        // GET: Vehiculoes
+        public ActionResult Index2()
+        {
+            return View(db.Vehiculo.ToList());
+        }
+
+        // GET: Vehiculoes/Details/5
+        public ActionResult Details2(string id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Vehiculo vehiculo = db.Vehiculo.Find(id);
+            if (vehiculo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vehiculo);
+        }
+
+        // GET: Vehiculoes/Create
+        public ActionResult Create2()
+        {
+            return View();
+        }
+
+        // POST: Vehiculoes/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2([Bind(Include = "Placa_Vehiculo,Tipo_Vehiculo,Marca_vehiculo,Estado_Vehiculo,Hora_Ingreso_vehiculo")] Vehiculo vehiculo)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Vehiculo.Add(vehiculo);
+                db.SaveChanges();
+                return RedirectToAction("Index2");
+            }
+
+            return View(vehiculo);
+        }
+
+        // GET: Vehiculoes/Edit/5
+        public ActionResult Edit2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Vehiculo vehiculo = db.Vehiculo.Find(id);
+            if (vehiculo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vehiculo);
+        }
+
+        // POST: Vehiculoes/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit2([Bind(Include = "Placa_Vehiculo,Tipo_Vehiculo,Marca_vehiculo,Estado_Vehiculo,Hora_Ingreso_vehiculo")] Vehiculo vehiculo)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(vehiculo).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index2");
+            }
+            return View(vehiculo);
+        }
+
+        // GET: Vehiculoes/Delete/5
+        public ActionResult Delete2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Vehiculo vehiculo = db.Vehiculo.Find(id);
+            if (vehiculo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vehiculo);
+        }
+
+        // POST: Vehiculoes/Delete/5
+        [HttpPost, ActionName("Delete2")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete2Confirmed(string id)
+        {
+            Vehiculo vehiculo = db.Vehiculo.Find(id);
+            db.Vehiculo.Remove(vehiculo);
+            db.SaveChanges();
+            return RedirectToAction("Index2");
+        }
     }
 }

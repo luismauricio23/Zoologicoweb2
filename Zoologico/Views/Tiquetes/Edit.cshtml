@@ -4,67 +4,61 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
 
-<h2>Edit</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Tiquete</h4>
+
+
+    <form>
+        <h4 class="text-center">Modificar Tiquete</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Numero_Tiquete)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Hora_Ingreso_Tiquete, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <h5>Hora Ingreso</h5>
                 @Html.EditorFor(model => model.Hora_Ingreso_Tiquete, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Hora_Ingreso_Tiquete, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Hora_salida_Tiquete, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Hora Salida</h5>
                 @Html.EditorFor(model => model.Hora_salida_Tiquete, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Hora_salida_Tiquete, "", new { @class = "text-danger" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Valor_Hora_Tiquete, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Valor Hora</h5>
                 @Html.EditorFor(model => model.Valor_Hora_Tiquete, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Valor_Hora_Tiquete, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Valor_Hora_Tiquete, "", new { @class = "text-danger", @readonly = "readonly" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Id_Parqueadero, "Id_Parqueadero", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Nombre Parqueadero</h5>
                 @Html.DropDownList("Id_Parqueadero", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Id_Parqueadero, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Placa_Vehiculo, "Placa_Vehiculo", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="form-group col-md-5">
+                <h5>Placa Vehiculo</h5>
                 @Html.DropDownList("Placa_Vehiculo", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Placa_Vehiculo, "", new { @class = "text-danger" })
             </div>
+
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="col-md-offset-1 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-outline-dark" />
+                <a href="@Url.Action("Index", "Tiquetes")" class="btn btn-outline-dark">
+                    <i class="icon-pencil icon-white"></i>
+                    <span>
+                        <strong>Regresar</strong>
+                    </span>
+                </a>
             </div>
-        </div>
-    </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+        </div>
+
+    </form>
+}

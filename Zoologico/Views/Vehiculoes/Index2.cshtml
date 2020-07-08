@@ -1,17 +1,12 @@
 ﻿@model IEnumerable<Zoologico.Models.Vehiculo>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
 <link href="~/Library/style/Workers.css" rel="stylesheet" />
-
 <h2 class="text-center">Vehiculos Registrados</h2>
-
-
-
-
-<a href="@Url.Action("Create", "Vehiculoes")" class="btn btn-outline-dark mao">
+<a href="@Url.Action("Create2", "Vehiculoes")" class="btn btn-outline-dark mao">
     <i class="icon-pencil icon-white"></i>
     <span>
         <strong>Registrar Vehiculo</strong>
@@ -63,9 +58,9 @@
 
 
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-danger" })
-                @Html.ActionLink("Detalle", "Details", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-primary" })
+                @Html.ActionLink("Editar", "Edit2", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete2", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details2", new { id = item.Placa_Vehiculo }, new { @class = "btn btn-outline-primary" })
             </td>
 
 
@@ -73,3 +68,4 @@
     }
 
 </table>
+

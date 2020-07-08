@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Zoologico.Models.Zonas>
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_LayoutVistaTrabajadores.cshtml";
+}
+
+    <link href="~/Library/style/Workers.css" rel="stylesheet" />
+
+<h2 class="text-center">Zonas</h2>
+
+<a href="@Url.Action("Create2", "Zonas")" class="btn btn-outline-dark mao">
+    <i class="icon-pencil icon-white"></i>
+    <span>
+        <strong>Nuevo Zona</strong>
+    </span>
+</a>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            <h5>Identificador</h5>
+        </th>
+        <th>
+            <h5>Zonas</h5>
+        </th>
+        <th>
+            <h5>Zoologico</h5>
+        </th>
+        <th>
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Zona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Zona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zoologicos.Nombre_Zoologico)
+            </td>
+            <td>
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit2", new { id = item.Id_Zona }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Eliminar", "Delete2", new { id = item.Id_Zona }, new { @class = "btn btn-outline-danger" })
+                @Html.ActionLink("Detalle", "Details2", new { id = item.Id_Zona }, new { @class = "btn btn-outline-primary" })
+            </td>
+        </tr>
+    }
+
+</table>

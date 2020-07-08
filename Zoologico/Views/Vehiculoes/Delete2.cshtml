@@ -1,14 +1,17 @@
 ﻿@model Zoologico.Models.Vehiculo
 
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
+    ViewBag.Title = "Delete2";
+    Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
 
-<link href="~/Library/style/Workers.css" rel="stylesheet" />
+<link href="~/Library/style/Workers.css" rel="stylesheet" />>
 
+<img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
+<div class="alert alert-warning col-md-4 t">
+    <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
+</div>
 <div>
-    <h2 class="text-center">Informacion Del Vehiculo</h2>
     <hr />
     <form class="label">
         <div class="form-row">
@@ -20,7 +23,7 @@
             <div class="form-group col-md-5">
                 <h5>Tipo Vehiculo</h5>
                 @Html.EditorFor(model => model.Tipo_Vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                @Html.ValidationMessageFor(model => model.Marca_vehiculo, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Tipo_Vehiculo, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
                 <h5>Marca</h5>
@@ -34,22 +37,23 @@
             </div>
             <div class="form-group col-md-5">
                 <h5>Hora de Ingreso</h5>
-                @Html.EditorFor(model => model.Hora_Ingreso_vehiculo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.EditorFor(model => model.Hora_Ingreso_vehiculo, new { htmlAttributes = new { @class = "form-control ", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Hora_Ingreso_vehiculo, "", new { @class = "text-danger" })
             </div>
 
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-1 col-md-10">
-                <a href="@Url.Action("Index", "Vehiculoes")" class="btn btn-outline-dark">
-                    <i class="icon-pencil icon-white"></i>
-                    <span>
-                        <strong>Regresar</strong>
-                    </span>
-                </a>
-                @Html.ActionLink("Editar", "Edit", new { id = Model.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
-            </div>
+
         </div>
     </form>
 
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-outline-dark" />
+            @Html.ActionLink("Regresar", "Index2", new { id = Model.Placa_Vehiculo }, new { @class = "btn btn-outline-info" })
+        </div>
+    }
+
 </div>
+

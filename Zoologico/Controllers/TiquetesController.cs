@@ -138,5 +138,114 @@ namespace Zoologico.Controllers
             }
             base.Dispose(disposing);
         }
+        // GET: Tiquetes2
+        public ActionResult Index2()
+        {
+            var tiquete = db.Tiquete.Include(t => t.Parqueadero).Include(t => t.Vehiculo);
+            return View(tiquete.ToList());
+        }
+
+        // GET: Tiquetes/Details2/5
+        public ActionResult Details2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Tiquete tiquete = db.Tiquete.Find(id);
+            if (tiquete == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tiquete);
+        }
+
+        // GET: Tiquetes/Create2
+        public ActionResult Create2()
+        {
+            ViewBag.Id_Parqueadero = new SelectList(db.Parqueadero, "Id_Parqueadero", "Nombre_Parqueadero");
+            ViewBag.Placa_Vehiculo = new SelectList(db.Vehiculo, "Placa_Vehiculo", "Tipo_Vehiculo");
+            return View();
+        }
+
+        // POST: Tiquetes/Create2
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2([Bind(Include = "Numero_Tiquete,Hora_Ingreso_Tiquete,Hora_salida_Tiquete,Valor_Hora_Tiquete,Id_Parqueadero,Placa_Vehiculo")] Tiquete tiquete)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Tiquete.Add(tiquete);
+                db.SaveChanges();
+                return RedirectToAction("Index2");
+            }
+
+            ViewBag.Id_Parqueadero = new SelectList(db.Parqueadero, "Id_Parqueadero", "Nombre_Parqueadero", tiquete.Id_Parqueadero);
+            ViewBag.Placa_Vehiculo = new SelectList(db.Vehiculo, "Placa_Vehiculo", "Tipo_Vehiculo", tiquete.Placa_Vehiculo);
+            return View(tiquete);
+        }
+
+        // GET: Tiquetes/Edit2/5
+        public ActionResult Edit2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Tiquete tiquete = db.Tiquete.Find(id);
+            if (tiquete == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Id_Parqueadero = new SelectList(db.Parqueadero, "Id_Parqueadero", "Nombre_Parqueadero", tiquete.Id_Parqueadero);
+            ViewBag.Placa_Vehiculo = new SelectList(db.Vehiculo, "Placa_Vehiculo", "Tipo_Vehiculo", tiquete.Placa_Vehiculo);
+            return View(tiquete);
+        }
+
+        // POST: Tiquetes/Edit2/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit2([Bind(Include = "Numero_Tiquete,Hora_Ingreso_Tiquete,Hora_salida_Tiquete,Valor_Hora_Tiquete,Id_Parqueadero,Placa_Vehiculo")] Tiquete tiquete)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(tiquete).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index2");
+            }
+            ViewBag.Id_Parqueadero = new SelectList(db.Parqueadero, "Id_Parqueadero", "Nombre_Parqueadero", tiquete.Id_Parqueadero);
+            ViewBag.Placa_Vehiculo = new SelectList(db.Vehiculo, "Placa_Vehiculo", "Tipo_Vehiculo", tiquete.Placa_Vehiculo);
+            return View(tiquete);
+        }
+
+        // GET: Tiquetes/Delete2/5
+        public ActionResult Delete2(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Tiquete tiquete = db.Tiquete.Find(id);
+            if (tiquete == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tiquete);
+        }
+
+        // POST: Tiquetes/Delete2/5
+        [HttpPost, ActionName("Delete2")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete2Confirmed(string id)
+        {
+            Tiquete tiquete = db.Tiquete.Find(id);
+            db.Tiquete.Remove(tiquete);
+            db.SaveChanges();
+            return RedirectToAction("Index2");
+        }
     }
 }
