@@ -11,7 +11,8 @@ namespace Zoologico.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Tiquete
     {
         public string Numero_Tiquete { get; set; }

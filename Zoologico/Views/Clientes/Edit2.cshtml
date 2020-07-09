@@ -10,7 +10,7 @@
 {
     @Html.AntiForgeryToken()
 
-
+<br />
     <form>
         <h4 class="text-center">Modificar Cliente</h4>
         <hr />
@@ -60,7 +60,7 @@
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
                 <input type="submit" value="Guardar" class="btn btn-outline-dark" />
-                <a href="@Url.Action("Index2", "Clientes")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index2", "Clientes")" class="btn btn-success">
                     <i class="icon-pencil icon-white"></i>
                     <span>
                         <strong>Regresar</strong>

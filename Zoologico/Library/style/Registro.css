@@ -15,21 +15,26 @@
     margin-top: -600px;
 }
 
+.mm {
+    background: crimson;
+    color: #fff;
+}
+
 
 .form-row {
     width: 500px;
     border-radius: 7px;
-    padding: 10px 30px;
+    padding: 20px 30px;
     display: flex;
     flex-wrap: wrap;
-    background: rgba(0,123,94, 0.8);
+    background: rgba(15,2,49, 1);
     margin-left: 450px;
     align-items: center;
     justify-content: center;
 }
 
 .titulo {
-    background: deepskyblue;
+    background: #0f0231;
     color: #fff;
     padding: 20px;
     text-align: center;

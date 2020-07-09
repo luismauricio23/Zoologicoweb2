@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 <link href="~/Library/style/Workers.css" rel="stylesheet" />
-
+<br />
 <img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
 <div class="alert alert-warning col-md-4 t">
     <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
@@ -15,27 +15,27 @@
     <form class="label">
         <div class="form-row">
             <div class="form-group col-md-5">
-                <h5>Nombre</h5>
+                <h5>Fecha</h5>
                 @Html.EditorFor(model => model.Fecha_Compra, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Fecha_Compra, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Apellido</h5>
+                <h5>Cantidad</h5>
                 @Html.EditorFor(model => model.Cantidad_Compra, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Cantidad_Compra, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Dirección</h5>
+                <h5>Valor Compra</h5>
                 @Html.EditorFor(model => model.Valor_Compra, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Valor_Compra, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Telefono</h5>
+                <h5>Nombre Clinete</h5>
                 @Html.EditorFor(model => model.Cliente.Nombre_Cliente, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Cliente.Nombre_Cliente, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Edad</h5>
+                <h5>Plan</h5>
                 @Html.EditorFor(model => model.Planes.Nombre_Plan, new { htmlAttributes = new { @class = "form-control ", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Planes.Nombre_Plan, "", new { @class = "text-danger" })
             </div>
@@ -49,8 +49,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-dark" />
-            @Html.ActionLink("Regresar", "Index", new { id = Model.Cedula_Cliente }, new { @class = "btn btn-outline-info" })
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Regresar", "Index", new { id = Model.Cedula_Cliente }, new { @class = "btn btn-success" })
         </div>
     }
 

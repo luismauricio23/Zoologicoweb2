@@ -139,6 +139,7 @@ namespace Zoologico.Controllers
             base.Dispose(disposing);
         }
         // GET: Tiquetes2
+        [AuthorizeUser(idOperacion: 115)]
         public ActionResult Index2()
         {
             var tiquete = db.Tiquete.Include(t => t.Parqueadero).Include(t => t.Vehiculo);
@@ -146,6 +147,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Tiquetes/Details2/5
+        [AuthorizeUser(idOperacion: 114)]
         public ActionResult Details2(string id)
         {
             if (id == null)
@@ -161,6 +163,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Tiquetes/Create2
+        [AuthorizeUser(idOperacion: 111)]
         public ActionResult Create2()
         {
             ViewBag.Id_Parqueadero = new SelectList(db.Parqueadero, "Id_Parqueadero", "Nombre_Parqueadero");
@@ -188,6 +191,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Tiquetes/Edit2/5
+        [AuthorizeUser(idOperacion: 112)]
         public ActionResult Edit2(string id)
         {
             if (id == null)
@@ -223,6 +227,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Tiquetes/Delete2/5
+        [AuthorizeUser(idOperacion: 113)]
         public ActionResult Delete2(string id)
         {
             if (id == null)

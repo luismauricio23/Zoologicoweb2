@@ -139,6 +139,7 @@ namespace Zoologico.Controllers
             base.Dispose(disposing);
         }
         // GET: Citas
+        [AuthorizeUser(idOperacion: 90)]
         public ActionResult Index2()
         {
             var citas = db.Citas.Include(c => c.Animales).Include(c => c.Veterinario);
@@ -146,6 +147,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Citas/Details/5
+        [AuthorizeUser(idOperacion: 89)]
         public ActionResult Details2(string id)
         {
             if (id == null)
@@ -161,6 +163,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Citas/Create
+        [AuthorizeUser(idOperacion: 86)]
         public ActionResult Create2()
         {
             ViewBag.Id_Animal = new SelectList(db.Animales, "Id_Animal", "Nombre_Animal");
@@ -188,6 +191,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Citas/Edit/5
+        [AuthorizeUser(idOperacion: 87)]
         public ActionResult Edit2(string id)
         {
             if (id == null)
@@ -223,6 +227,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Citas/Delete/5
+        [AuthorizeUser(idOperacion: 88)]
         public ActionResult Delete2(string id)
         {
             if (id == null)

@@ -11,10 +11,12 @@ namespace Zoologico.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Compra
     {
         public string Numero_Compra { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> Fecha_Compra { get; set; }
         public string Cantidad_Compra { get; set; }
         public string Valor_Compra { get; set; }

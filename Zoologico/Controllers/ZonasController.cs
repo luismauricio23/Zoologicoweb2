@@ -135,6 +135,7 @@ namespace Zoologico.Controllers
             base.Dispose(disposing);
         }
         // GET: Zonas
+        [AuthorizeUser(idOperacion: 125)]
         public ActionResult Index2()
         {
             var zonas = db.Zonas.Include(z => z.Zoologicos);
@@ -142,6 +143,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Zonas/Details/5
+        [AuthorizeUser(idOperacion: 124)]
         public ActionResult Details2(string id)
         {
             if (id == null)
@@ -157,6 +159,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Zonas/Create
+        [AuthorizeUser(idOperacion: 121)]
         public ActionResult Create2()
         {
             ViewBag.Nit_Zoologico = new SelectList(db.Zoologicos, "Nit_Zoologico", "Nombre_Zoologico");
@@ -182,6 +185,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Zonas/Edit/5
+        [AuthorizeUser(idOperacion: 122)]
         public ActionResult Edit2(string id)
         {
             if (id == null)
@@ -215,6 +219,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Zonas/Delete/5
+        [AuthorizeUser(idOperacion: 123)]
         public ActionResult Delete2(string id)
         {
             if (id == null)

@@ -130,12 +130,14 @@ namespace Zoologico.Controllers
             base.Dispose(disposing);
         }
         // GET: Vehiculoes
+        [AuthorizeUser(idOperacion: 120)]
         public ActionResult Index2()
         {
             return View(db.Vehiculo.ToList());
         }
 
         // GET: Vehiculoes/Details/5
+        [AuthorizeUser(idOperacion: 119)]
         public ActionResult Details2(string id)
         {
 
@@ -152,6 +154,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Vehiculoes/Create
+        [AuthorizeUser(idOperacion: 116)]
         public ActionResult Create2()
         {
             return View();
@@ -175,6 +178,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Vehiculoes/Edit/5
+        [AuthorizeUser(idOperacion: 117)]
         public ActionResult Edit2(string id)
         {
             if (id == null)
@@ -206,6 +210,7 @@ namespace Zoologico.Controllers
         }
 
         // GET: Vehiculoes/Delete/5
+        [AuthorizeUser(idOperacion: 118)]
         public ActionResult Delete2(string id)
         {
             if (id == null)
