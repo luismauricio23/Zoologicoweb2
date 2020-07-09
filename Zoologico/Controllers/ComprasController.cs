@@ -55,6 +55,8 @@ namespace Zoologico.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Numero_Compra,Fecha_Compra,Cantidad_Compra,Valor_Compra,Id_Plan,Cedula_Cliente")] Compra compra)
         {
+         
+
             if (ModelState.IsValid)
             {
                 db.Compra.Add(compra);
@@ -253,6 +255,31 @@ namespace Zoologico.Controllers
             return RedirectToAction("Index2");
         }
 
-       
+        public ActionResult Reservacion()
+        {
+            ViewBag.Cedula_Cliente = new SelectList(db.Cliente, "Cedula_Cliente", "Nombre_Cliente");
+            ViewBag.Id_Plan = new SelectList(db.Planes, "Id_Plan", "Nombre_Plan");
+            return View();
+        }
+
+        // POST: Compras/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Reservacion([Bind(Include = "Numero_Compra,Fecha_Compra,Cantidad_Compra,Valor_Compra,Id_Plan,Cedula_Cliente")] Compra compra)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Compra.Add(compra);
+                db.SaveChanges();
+                return RedirectToAction("Reservacion","Home");
+            }
+
+            ViewBag.Cedula_Cliente = new SelectList(db.Cliente, "Cedula_Cliente", "Nombre_Cliente", compra.Cedula_Cliente);
+            ViewBag.Id_Plan = new SelectList(db.Planes, "Id_Plan", "Nombre_Plan", compra.Id_Plan);
+            return View(compra);
+        }
+
     }
 }

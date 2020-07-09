@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Reservacion";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="~/Library/style/main.css" rel="stylesheet" />
+
+
+<div>
+    <img src="~/Library/Imagenes/verde.jpg" width="100%" height="300px">
+</div>
+<br />
+<br />
+
+
+<div class="container">
+
+    <div class="alert alert-success alert-dismissible" id="myAlert">
+        <button type="button" class="close">&times;</button>
+        <strong>Reserva Exitoso!</strong> Su Reserva fue realizada satisfactoriamente.
+    </div>
+</div>
+
+<script>
+        $(document).ready(function () {
+            $(".close").click(function () {
+                $("#myAlert").alert("close");
+            });
+        });
+</script>

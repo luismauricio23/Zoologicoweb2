@@ -37,6 +37,10 @@ namespace Zoologico.Controllers
         {
             return View();
         }
+        public ActionResult Reservacion()
+        {
+            return View();
+        }
 
     }
 }

@@ -1,8 +1,45 @@
 ﻿
-@{
-    ViewBag.Title = "Supervisores";
-    Layout = "~/Views/Shared/_LayoutVistaSupervisores.cshtml";
-}
+    <link href="~/Library/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+<br />
+<br />
 
-<h2>Supervisores</h2>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-6" style="background-color:white;">
+            <div class="text-center">
+                <div>
+                    <img src="~/Library/imagenes/vendedoresZoo.jpg" width="500" height="400">
+                    <h2>Menu Vendedores</h2>
+                    <a href="@Url.Action("Vendedor", "Home")" class="btn btn-success btn-lg">
+                        <i class="icon-pencil icon-white"></i>
+                        <span>
+                            <strong>Vendedores</strong>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <br />
+
+        </div>
+
+        <div class="col-sm-6" style="background-color:white;">
+            <div class="text-center">
+                <div>
+                    <img src="~/Library/imagenes/trabajadoresZoo.jpg" width="500" height="400">
+                    <h2>Menu Trabajadores</h2>
+                    <a href="@Url.Action("Trabajadores", "Home")" class="btn btn-success btn-lg">
+                        <i class="icon-pencil icon-white"></i>
+                        <span>
+                            <strong>Trabajadores</strong>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+
 

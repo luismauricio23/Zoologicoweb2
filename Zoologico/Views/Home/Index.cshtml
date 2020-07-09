@@ -3,34 +3,48 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
-
 <link href="~/Library/style/main.css" rel="stylesheet" />
 <link href="~/Library/style/SocialRedes.css" rel="stylesheet" />
 
 <div id="carousel1" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="~/Library/Imagenes/zorro.jpg" alt="">
+            <img src="~/Library/Imagenes/inicio1.jpg" alt="">
             <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                <p><a href="#"> mas informacion</a></p>
+                <h5>ZOOLOGICO DE MANIZALES</h5>
+                <p>
+                    Estamos entre los más grandes zoológicos en el mundo,
+                    es el más grande en Sur América, albergamos a 2.000 animales que representan
+                    650 especies de alrededor del mundo. El zoológico se compone de 4
+                    zonas conformando habitats naturalistas.
+                </p>
+                <p><a href="@Url.Action("informacionZ", "Home")"> mas informacion</a></p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="~/Library/Imagenes/leon.jpg" alt="">
+            <img src="~/Library/Imagenes/inicio2.jpg" alt="">
             <div class="carousel-caption d-none d-md-block">
-                <h5>secon slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                <p><a href="#"> mas informacion</a></p>
+                <h5>Que animales podras ver</h5>
+                <p>
+                    La exposición de llanuras Africanas permite a los visitantes caminar
+                    por delante de los leones, las cigüeñas, las cebras y ver las manadas
+                    de perros salvajes africanos.
+                    Las jirafas deambulan cercanas. Los perros salvajes pueden ser vistos muy próximos
+                    por medio de un pabellón de visión con fachada de cristal.
+                    Tambien podras ver muchos mas animales en este maravilloso lugar
+                </p>
+                <p><a href="@Url.Action("informacionZ", "Home")"> mas informacion</a></p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="~/Library/Imagenes/perro.jpg" alt="">
+            <img src="~/Library/Imagenes/inicio3.jpg" alt="">
             <div class="carousel-caption d-none d-md-block">
-                <h5>three slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                <p><a href="#"> mas informacion</a></p>
+                <h5>Registrate</h5>
+                <p>
+                    Registrate en nuestra pagina para conocer informacion detallada de planes y precios, ademas al registrarte podras realizar
+                    reserva de tiquetes de manera facil y rapida.
+                </p>
+                <p><a href="@Url.Action("Registro", "Clientes")"> Registrarme</a></p>
             </div>
         </div>
     </div>
@@ -63,4 +77,3 @@
 
     </ul>
 </div>
-

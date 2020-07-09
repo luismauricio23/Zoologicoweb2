@@ -58,7 +58,7 @@ namespace Zoologico.Controllers
                         where e.Cedula_Cliente == User.Trim() && e.Pass_Cliente == pass.Trim()
                         select e).FirstOrDefault();
                         Session["User"] = oUser;
-                        return RedirectToAction("Index", "Compras");
+                        return RedirectToAction("Reservacion", "Compras");
 
                     }
                     else

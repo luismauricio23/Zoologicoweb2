@@ -102,11 +102,14 @@
     <Content Include="Library\Bootstrap\popper.min.js" />
     <Content Include="Library\fortawesome\fontawesome.css" />
     <Content Include="Library\jquery\jquery-3.3.1.slim.min.js" />
+    <Content Include="Library\js\Calculo.js" />
     <Content Include="Library\js\Map.js" />
+    <Content Include="Library\style\Footer.css" />
     <Content Include="Library\style\Login.css" />
     <Content Include="Library\style\main.css" />
     <Content Include="Library\style\NabColor.css" />
     <Content Include="Library\style\Registro.css" />
+    <Content Include="Library\style\Reservacion.css" />
     <Content Include="Library\style\SocialRedes.css" />
     <Content Include="Library\style\Workers.css" />
     <Content Include="Models\Model.Context.tt">
@@ -367,6 +370,9 @@
     <Content Include="Views\Citas\Create2.cshtml" />
     <Content Include="Views\Citas\Edit2.cshtml" />
     <Content Include="Views\Citas\Delete2.cshtml" />
+    <Content Include="Views\Compras\Reservacion.cshtml" />
+    <Content Include="Views\Shared\_LayoutReservacion.cshtml" />
+    <Content Include="Views\Home\Reservacion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

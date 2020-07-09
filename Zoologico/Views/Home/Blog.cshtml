@@ -3,185 +3,270 @@
     ViewBag.Title = "Blog";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
+<link href="~/Library/style/main.css" rel="stylesheet" />
+<link href="~/Library/style/SocialRedes.css" rel="stylesheet" />
+<link href="~/Library/style/Registro.css" rel="stylesheet" />
 
-    <link href="~/Library/style/main.css" rel="stylesheet" />
-    <link href="~/Library/style/SocialRedes.css" rel="stylesheet" />
-<style>
 
-
-</style>
-    <div>
-        <img src="~/Library/Imagenes/mapache.jpg" width="100%" height="700px">
-    </div>
-    <div class="container mm">
-        <div class="row mb-2">
-            <div class="col-md-6 con">
-                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">World</strong>
-                        <h3 class="mb-0">Featured post</h3>
-                        <div class="mb-1 text-muted">Nov 12</div>
-                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
-                    </div>
-                    <div class="col-auto d-none d-lg-block">
-                        <img src="~/Library/Imagenes/zorro.jpg" width="200px" height="250px">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 con">
-                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-success">Design</strong>
-                        <h3 class="mb-0">Post title</h3>
-                        <div class="mb-1 text-muted">Nov 11</div>
-                        <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
-                    </div>
-                    <div class="col-auto d-none d-lg-block">
-                        <img src="~/Library/Imagenes/perro.jpg" width="200px" height="250px">
-                    </div>
-                </div>
-            </div>
+<div id="carousel1" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Library/Imagenes/blog1.jpg" alt="">
+         
+        </div>
+        <div class="carousel-item">
+            <img src="~/Library/Imagenes/blog2.jpg" alt="">
+     
+        </div>
+        <div class="carousel-item">
+            <img src="~/Library/Imagenes/blog3.jpg" alt="">
+           
         </div>
     </div>
-
-    <main role="main" class="container">
-        <div class="row">
-            <div class="col-md-8 blog-main">
-                <h3 class="pb-4 mb-4 font-italic border-bottom">
-                    From the Firehose
-                </h3>
-
-                <div class="blog-post">
-                    <h2 class="blog-post-title">Sample blog post</h2>
-                    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-
-                    <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-                    <hr>
-                    <p>
-                        Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
-                        consectetur purus sit amet fermentum.
-                    </p>
-                    <blockquote>
-                        <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    </blockquote>
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                    <h2>Heading</h2>
-                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <h3>Sub-heading</h3>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    <pre><code>Example code block</code></pre>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-                    <h3>Sub-heading</h3>
-                    <p>
-                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                        condimentum nibh, ut fermentum massa justo sit amet risus.
-                    </p>
-                    <ul>
-                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                        <li>Donec id elit non mi porta gravida at eget metus.</li>
-                        <li>Nulla vitae elit libero, a pharetra augue.</li>
-                    </ul>
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-                    <ol>
-                        <li>Vestibulum id ligula porta felis euismod semper.</li>
-                        <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-                        <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-                    </ol>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-                </div>
-                <!-- /.blog-post -->
-
-                <div class="blog-post">
-                    <h2 class="blog-post-title">Another blog post</h2>
-                    <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
-
-                    <p>
-                        Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis
-                        consectetur purus sit amet fermentum.
-                    </p>
-                    <blockquote>
-                        <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    </blockquote>
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                </div>
-                <!-- /.blog-post -->
-
-                <div class="blog-post">
-                    <h2 class="blog-post-title">New feature</h2>
-                    <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
-
-                    <p>
-                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                        condimentum nibh, ut fermentum massa justo sit amet risus.
-                    </p>
-                    <ul>
-                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                        <li>Donec id elit non mi porta gravida at eget metus.</li>
-                        <li>Nulla vitae elit libero, a pharetra augue.</li>
-                    </ul>
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-                </div>
-                <!-- /.blog-post -->
-
-
-
-            </div>
-            <!-- /.blog-main -->
-
-            <aside class="col-md-4 blog-sidebar">
-                <div class="p-4 mb-3 bg-light rounded">
-                    <h4 class="font-italic">About</h4>
-                    <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                </div>
-
-                <div class="p-4">
-                    <h4 class="font-italic">Archives</h4>
-                    <ol class="list-unstyled mb-0">
-                        <li><a href="#">March 2014</a></li>
-                        <li><a href="#">February 2014</a></li>
-                        <li><a href="#">January 2014</a></li>
-                        <li><a href="#">December 2013</a></li>
-                        <li><a href="#">November 2013</a></li>
-                        <li><a href="#">October 2013</a></li>
-                        <li><a href="#">September 2013</a></li>
-                        <li><a href="#">August 2013</a></li>
-                        <li><a href="#">July 2013</a></li>
-                        <li><a href="#">June 2013</a></li>
-                        <li><a href="#">May 2013</a></li>
-                        <li><a href="#">April 2013</a></li>
-                    </ol>
-                </div>
-
-                <div class="p-4">
-                    <h4 class="font-italic">Elsewhere</h4>
-                    <ol class="list-unstyled">
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Facebook</a></li>
-                    </ol>
-                </div>
-            </aside>
-            <!-- /.blog-sidebar -->
-
-        </div>
-        <!-- /.row -->
-
-    </main>
-    <div class="social">
-        <ul>
-            <li>
-                <a href="http://www.facebook.com/falconmasters" target="_blank" class="icon-facebook"></a>
-            </li>
-            <li>
-                <a href="http://www.twitter.com/falconmasters" target="_blank" class="icon-twitter"></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/?hl=es-la" target="_blank" class="icon-instagram"></a>
-            </li>
-
-        </ul>
+    <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <ol class="carousel-indicators">
+        <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel1" data-slide-to="1"></li>
+        <li data-target="#carousel1" data-slide-to="2"></li>
+    </ol>
 </div>
+<div class="container ">
+    <div class="row mb-2">
+        <div class="col-md-6 con">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">Habitat de Leones</strong>
+                    <h3 class="mb-0">MUNDO FELINO</h3>
+                    <div class="mb-1 text-muted">Julio 8</div>
+                    <p class="card-text mb-auto">
+                        El león es el félido viviente más grande junto al tigre.
+                        una fuerte mandíbula y unos dientes caninos de ocho centímetros,
+                        el león puede matar grandes presas, ¡que esperas para conocerlos!
+                    </p>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img src="~/Library/Imagenes/leon2.jpg" width="200px" height="290px">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 con">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Habitat Giant</strong>
+                    <h3 class="mb-0">MUNDO GIGANTE</h3>
+                    <div class="mb-1 text-muted">Julio 07</div>
+                    <p class="mb-auto">
+                        Conoce las especies mas espectaculares y grandes con las que contamos, te gustaria
+                        conocer los elefantes, jirafas y osos, especies realmente increibles, veras que son especies
+                        increibles.
+                        <br><br />
+
+                    </p>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img src="~/Library/Imagenes/blog.jpg" width="200px" height="290px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+
+
+            <div class="blog-post">
+                <h2 class="blog-post-title">ZOOLOGICO DE MANIZALES</h2>
+                <p class="blog-post-meta">Julio 1, 2020 by <a href="#">Mauricio Rojas Serna</a></p>
+
+                <p>Zoologico de Manizales, zona de protección y conservacion de la vida silvestre</p>
+                <hr>
+                <p>
+                    El zoologico de manizales como zona de proteccion de la fauna de nuestro pais y el mundo,
+                    es uno de los zoológicos mas grandes del mundo, es el más grande en Sur América, albergamos
+                    a 2.000 animales que representan 650 especies, compuesto por 4 zonas conformando habitats
+                    naturales para las especies con las que se cuentan.
+                </p>
+                <blockquote>
+                    <p>
+                        El principal motivo para la existencia del Zoologico de Manizales es ser un lugar
+                        para la conservación de las especies, muchas en peligro de extinción. Este zoologico
+                        no solo es para la exhibición de animales, es un centro de investigación, que a su vez,
+                        por ejemplo, prestan personal experimentado a parques de vida salvaje en el mundo para
+                        brindar su apoyo, el cual sin el apoyo logístico de nuestros investigadores sería bastante difícil.
+                    </p>
+                </blockquote>
+                <p>
+                    Visitar el zoologico de Manizales es contribuir a obtener fondos para mantener en las mejores
+                    condiciones las especies que se encuentran en el zoologico, igualmente contribuir con la investigacion y ayuda
+                    a los especies que son rescatadas y traidas a esas instalaciones.
+                </p>
+                <p>
+                    Una vez ingresan los animales rescatados que se encontraban en cuativerio al zoologico de manizales, se realiza una lucha contra el tiempo,
+                    a fin de poder recuperar la salud de estos animales y de ser posible regresarlo a su medio natural.
+                </p>
+                <h2>Colaboración de los visitantes para la protección de los animales.</h2>
+                <p class="blog-post-meta">Julio 07, 2020 by <a href="#">Estiven G.</a></p>
+                <p>
+                    Parte esencial e inalienable del esfuerzo conservacionista en nuestro zoologico es nuestro programa
+                    educativo profundo y minucioso que informa al público general. Un ciudadano educado en materias de
+                    conservacionismo y preservación podrá identificar los hábitats de distintos animales. De esta manera estarás más
+                    consciente del potencial daño que podría causar y del valor que la biodiversidad.
+                </p>
+
+                <p>
+                    El fin de la educación es prevenir el deterioro acelerado de ecosistemas que actualmente
+                    existe en el planeta. Los zoológicos atraen principalmente a niños, y este es el lugar ideal
+                    para enseñarles la responsabilidad que tienen con los ecosistemas. Por eso en los zoológicos
+                    es común encontrar información educativa y guías que buscan formar ciudadanos conscientes,
+                    si quieres saber mas sobre nuestro programa de educacion al publico para la proteccion de
+                    nuestras especies visitanos.
+                </p>
+
+                <h3>Programas de repoblación</h3>
+                <p>
+                    Nuestros programas están estrechamente ligados a los de conservación y reproducción de animales
+                    en peligro de extinción. El fin último de estos programas es el de retornar a los animales
+                    en peligro de extinción a sus respectivos ecosistemas. Esta es una de las pocas maneras
+                    disponibles para restaurar los ecosistemas del planeta, y es considerablemente distinta.
+                </p>
+                <p>
+                    Buscamos así crear espacios seguros. El fin de nuestro zoológico no es el de exhibir animales,
+                    sino el de reintegrarlos en sus espacios naturales. De lo contrario no estarían cumpliendo
+                    una función conservacionista, y serían más parecidos a los circos que cualquier otra cosa.
+                </p>
+            </div>
+
+            <!-- /.blog-post -->
+
+
+
+        </div>
+        <!-- /.blog-main -->
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">La experiencia incluye:</h4>
+                <p class="mb-0">
+                    <ul>
+                        <li>Atención especializada.</li>
+                        <li>Parqueaderos vigilados.</li>
+                        <li>Personal calificado que lo orientará desde su ingreso.</li>
+                        <li>Taquillas para la adquisición de Pasaportes de acceso.</li>
+                        <li>Plegable informativo con Mapa de las zonas.</li>
+                        <li>Punto Especial de Atención al Cliente.</li>
+                        <li>
+                            Edificio de Acceso con Tienda o Store de Souvenirs, Servicio al Cliente y Primeros
+                            Auxilios.
+                        </li>
+                        <li>Restaurante.</li>
+                        <li>Zona WiFi.</li>
+                        <li>Servicio de Guías – interpretes ambientales.</li>
+
+                    </ul>
+            </div>
+
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">Recomendaciones</h4>
+                <p class="mb-0">
+                    <ul>
+                        <li>No ingerir bebidas alcohólicas antes y durante el recorrido.</li>
+                        <li>No ingresar mascotas.</li>
+                        <li>Desde tu ingreso harás parte de un ecosistema que debes cuidar.</li>
+                        <li>No maltratar ni extraer ningún componente vegetal o animal.</li>
+                        <li>Residuos de alimentos, envases, etc. deben ser depositados en sitios destinados para tal fin.</li>
+                        <li>Siempre debes estar acompañado y no buscar nuevos caminos que pongan en peligro tu seguridad.</li>
+                        <li>No es aconsejable llevar elementos de alto valor que se puedan perder o estropiar con facilidad.</li>
+                        <li>Utilizar prendas cómodas y zapatos de buen agarre.</li>
+                        <li>Utilizar protección solar (sombreros, cachuchas, protectores en crema, etc.)</li>
+                    </ul>
+                </p>
+            </div>
+
+
+        </aside>
+        <!-- /.blog-sidebar -->
+
+    </div>
+    <!-- /.row -->
+
+</main>
+<div class="social">
+    <ul>
+        <li>
+            <a href="http://www.facebook.com/falconmasters" target="_blank" class="icon-facebook"></a>
+        </li>
+        <li>
+            <a href="http://www.twitter.com/falconmasters" target="_blank" class="icon-twitter"></a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/?hl=es-la" target="_blank" class="icon-instagram"></a>
+        </li>
+
+    </ul>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<section id="footer">
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Instituciones</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Zoologico de Manizales</a></li>
+                    <li><a href="https://www.enticconfio.gov.co/"><i class="fa fa-angle-double-right"></i>En TIC Confío</a></li>
+                    <li><a href="https://www.policia.gov.co/proteccion-ambiental/patrullas"><i class="fa fa-angle-double-right"></i>Patrulla de Protección Animal</a></li>
+                    <li><a href="https://manizales.gov.co/sedes-alcaldia/"><i class="fa fa-angle-double-right"></i>Alcaldia de Manizales</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Enlaces de Interes</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.datos.gov.co/"><i class="fa fa-angle-double-right"></i>Datos Abiertos</a></li>
+                    <li><a href="https://www.funcionpublica.gov.co/"><i class="fa fa-angle-double-right"></i>Función Pública</a></li>
+                    <li><a href="https://www.colombiacompra.gov.co/"><i class="fa fa-angle-double-right"></i>Colombia Compra Eficiente</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Videos de Especie Animal</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.youtube.com/watch?v=047N2PgjeLE"><i class="fa fa-angle-double-right"></i>Tigres</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=yPUxDfKSZgs"><i class="fa fa-angle-double-right"></i>Elefantes</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=gX2wfTo9TLg"><i class="fa fa-angle-double-right"></i>Suricatos</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=6nOrkmvpTnk&t=4s"><i class="fa fa-angle-double-right"></i>Hipopotamos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                <p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> Registrado por Luis Mauricio Rojas and Estiven Gomez, Inc. Manizales [M.E Tecnology subsidiary, Manizales, MN]</p>
+                <p class="h6">© All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Todos los derechos reservados</a></p>
+            </div>
+            <hr>
+        </div>
+    </div>
+</section>
