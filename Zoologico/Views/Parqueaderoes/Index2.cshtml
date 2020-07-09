@@ -4,10 +4,10 @@
     Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
 <link href="~/Library/style/Workers.css" rel="stylesheet" />
-
+<br />
 <h2 class="text-center">Parqueaderos Existentes</h2>
 
-<a href="@Url.Action("Create2", "Parqueaderoes")" class="btn btn-outline-dark mao">
+<a href="@Url.Action("Create2", "Parqueaderoes")" class="btn btn-success mao">
     <i class="icon-pencil icon-white"></i>
     <span>
         <strong>Registrar Parqueadero</strong>
@@ -33,29 +33,29 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id_Parqueadero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre_Parqueadero)
-            </td>
-            <td>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zoologicos.Nombre_Zoologico)
-            </td>
+<tr>
+    <td>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id_Parqueadero)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre_Parqueadero)
+    </td>
+    <td>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Zoologicos.Nombre_Zoologico)
+    </td>
 
-            <td>
-                @Html.ActionLink("Editar", "Edit2", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-info" })
-                @Html.ActionLink("Eliminar", "Delete2", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-danger" })
-                @Html.ActionLink("Detalle", "Details2", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-primary" })
-            </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit2", new { id = item.Id_Parqueadero }, new { @class = "btn btn-success" })
+        @Html.ActionLink("Eliminar", "Delete2", new { id = item.Id_Parqueadero }, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Detalle", "Details2", new { id = item.Id_Parqueadero }, new { @class = "btn btn-success" })
+    </td>
 
 
-        </tr>
+</tr>
     }
 
 </table>

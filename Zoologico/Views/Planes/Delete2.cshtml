@@ -3,28 +3,8 @@
     ViewBag.Title = "Delete2";
     Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
-<style>
-
-    .form-group {
-        margin-left: 70px;
-    }
-
-    .float {
-        margin-left: 1000px;
-    }
-
-
-    .form-actions {
-        margin-left: 70px;
-        margin-top: 15px;
-    }
-
-    .t {
-        margin-bottom: 50px;
-        margin-top: -80px;
-        margin-left: 55px;
-    }
-</style>
+    <link href="~/Library/style/Workers.css" rel="stylesheet" />
+<br />
 
 <img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
 <div class="alert alert-warning col-md-4 t">
@@ -45,7 +25,7 @@
                 @Html.ValidationMessageFor(model => model.Nombre_Plan, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-5">
-                <h5>Precio Zoologico</h5>
+                <h5>Precio Plan</h5>
                 @Html.EditorFor(model => model.Precio_plan, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Precio_plan, "", new { @class = "text-danger" })
             </div>
@@ -63,8 +43,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-dark" />
-            @Html.ActionLink("Regresar", "Index2", new { id = Model.Id_Plan }, new { @class = "btn btn-outline-info" })
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Regresar", "Index2", new { id = Model.Id_Plan }, new { @class = "btn btn-success" })
         </div>
     }
 

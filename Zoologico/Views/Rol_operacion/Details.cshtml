@@ -4,13 +4,9 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
-<style>
-    .form-group {
-        margin-left: 70px;
-    }
-</style>
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
 
-
+<br />
 <div>
     <h4 class="text-center">Detalle Rol Operacion</h4>
     <hr />
@@ -35,13 +31,13 @@
     </form>
     <div class="form-group">
         <div class="col-md-offset-1 col-md-10">
-            <a href="@Url.Action("Index", "Rol_Operacion")" class="btn btn-outline-dark">
+            <a href="@Url.Action("Index", "Rol_Operacion")" class="btn btn-success">
                 <i class="icon-pencil icon-white"></i>
                 <span>
                     <strong>Regresar</strong>
                 </span>
             </a>
-            @Html.ActionLink("Editar", "Edit", new { id = Model.id }, new { @class = "btn btn-outline-info" })
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }, new { @class = "btn btn-outline-dark" })
         </div>
     </div>
-    </div>
+</div>

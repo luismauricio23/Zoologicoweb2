@@ -4,16 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
-<style>
-    .mao {
-        margin-left: 30px;
-        margin-bottom: 20px;
-    }
-</style>
+<link href="~/Library/style/Workers.css" rel="stylesheet" />
+<br />
 
 <h2 class="text-center">Roles</h2>
 
-<a href="@Url.Action("Create", "Rols")" class="btn btn-outline-dark mao">
+<a href="@Url.Action("Create", "Rols")" class="btn btn-success mao">
     <i class="icon-pencil icon-white"></i>
     <span>
         <strong>Nuevo Rol </strong>
@@ -22,6 +18,7 @@
 <table class="table">
 
     <tr>
+        <th></th>
         <th>
             <h5>Identificador</h5>
         </th>
@@ -39,22 +36,22 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.id)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.nombre)
-    </td>
-    <td>
-        @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { @class = "btn btn-outline-info" })
-        @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "btn btn-outline-danger" })
-        @Html.ActionLink("Detalle", "Details", new { id = item.id }, new { @class = "btn btn-outline-primary" })
-    </td>
-    <td>
-       
-    </td>
-</tr>
+        <tr>
+            <td></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.id }, new { @class = "btn btn-success" })
+            </td>
+            <td>
+            </td>
+        </tr>
     }
 
 </table>

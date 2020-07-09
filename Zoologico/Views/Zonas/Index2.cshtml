@@ -5,10 +5,10 @@
 }
 
     <link href="~/Library/style/Workers.css" rel="stylesheet" />
-
+<br />
 <h2 class="text-center">Zonas</h2>
 
-<a href="@Url.Action("Create2", "Zonas")" class="btn btn-outline-dark mao">
+<a href="@Url.Action("Create2", "Zonas")" class="btn btn-success mao">
     <i class="icon-pencil icon-white"></i>
     <span>
         <strong>Nuevo Zona</strong>
@@ -49,9 +49,9 @@
             <td>
             </td>
             <td>
-                @Html.ActionLink("Editar", "Edit2", new { id = item.Id_Zona }, new { @class = "btn btn-outline-info" })
-                @Html.ActionLink("Eliminar", "Delete2", new { id = item.Id_Zona }, new { @class = "btn btn-outline-danger" })
-                @Html.ActionLink("Detalle", "Details2", new { id = item.Id_Zona }, new { @class = "btn btn-outline-primary" })
+                @Html.ActionLink("Editar", "Edit2", new { id = item.Id_Zona }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Eliminar", "Delete2", new { id = item.Id_Zona }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Detalle", "Details2", new { id = item.Id_Zona }, new { @class = "btn btn-success" })
             </td>
         </tr>
     }

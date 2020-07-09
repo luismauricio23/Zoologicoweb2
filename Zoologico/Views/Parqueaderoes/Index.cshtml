@@ -6,10 +6,10 @@
 }
 
 <link href="~/Library/style/Workers.css" rel="stylesheet" />
-
+<br />
 <h2 class="text-center">Parqueaderos Existentes</h2>
 
-<a href="@Url.Action("Create", "Parqueaderoes")" class="btn btn-outline-dark mao">
+<a href="@Url.Action("Create", "Parqueaderoes")" class="btn btn-success mao">
     <i class="icon-pencil icon-white"></i>
     <span>
         <strong>Registrar Parqueadero</strong>
@@ -51,9 +51,9 @@
             </td>
 
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-info" })
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-danger" })
-                @Html.ActionLink("Detalle", "Details", new { id = item.Id_Parqueadero }, new { @class = "btn btn-outline-primary" })
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id_Parqueadero }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id_Parqueadero }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Detalle", "Details", new { id = item.Id_Parqueadero }, new { @class = "btn btn-success" })
             </td>
 
 

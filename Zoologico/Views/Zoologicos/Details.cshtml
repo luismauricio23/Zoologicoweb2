@@ -5,29 +5,8 @@
     Layout = "~/Views/Shared/_LayoutTrabajadores.cshtml";
 }
 
-<style>
-
-
-    .form-group {
-        margin-left: 70px;
-    }
-
-    .float {
-        margin-left: 1000px;
-    }
-
-    .form-actions {
-        margin-left: 70px;
-        margin-top: 15px;
-    }
-
-    .t {
-        margin-bottom: 50px;
-        margin-top: -80px;
-        margin-left: 55px;
-    }
-</style>
-
+    <link href="~/Library/style/Workers.css" rel="stylesheet" />
+<br />
 <div>
     <h4 class="text-center">Informacion Del Zoologico</h4>
     <hr />
@@ -67,13 +46,13 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
-                <a href="@Url.Action("Index", "Zoologicos")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index", "Zoologicos")" class="btn btn-success">
                     <i class="icon-pencil icon-white"></i>
                     <span>
                         <strong>Regresar</strong>
                     </span>
                 </a>
-                @Html.ActionLink("Editar", "Edit", new { id = Model.Nit_Zoologico }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Nit_Zoologico }, new { @class = "btn btn-outline-dark" })
             </div>
         </div>
     </form>

@@ -3,18 +3,13 @@
     ViewBag.Title = "Edit2";
     Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
-<style>
 
-    .form-group {
-        margin-left: 70px;
-    }
-</style>
-
+    <link href="~/Library/style/Workers.css" rel="stylesheet" />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-
+    <br />
     <form>
         <h2 class="text-center">Modificar Plan</h2>
         <hr />
@@ -47,7 +42,7 @@
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
                 <input type="submit" value="Guardar" class="btn btn-outline-dark" />
-                <a href="@Url.Action("Index2", "Planes")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index2", "Planes")" class="btn btn-success">
                     <i class="icon-pencil icon-white"></i>
                     <span>
                         <strong>Regresar</strong>

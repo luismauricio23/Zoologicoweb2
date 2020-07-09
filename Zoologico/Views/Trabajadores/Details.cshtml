@@ -75,13 +75,13 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
-                <a href="@Url.Action("Index", "Trabajadores")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index", "Trabajadores")" class="btn btn-success">
                     <i class="icon-pencil icon-white"></i>
                     <span>
                         <strong>Regresar</strong>
                     </span>
                 </a>
-                @Html.ActionLink("Editar", "Edit", new { id = Model.id_Trabajador }, new { @class = "btn btn-outline-info" })
+                @Html.ActionLink("Editar", "Edit", new { id = Model.id_Trabajador }, new { @class = "btn btn-outline-dark" })
             </div>
         </div>
     </form>

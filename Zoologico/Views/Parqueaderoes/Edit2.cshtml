@@ -10,7 +10,7 @@
 {
     @Html.AntiForgeryToken()
 
-
+    <br />
     <form>
         <h2 class="text-center">Modificar Parqueadero</h2>
         <hr />
@@ -34,7 +34,7 @@
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
                 <input type="submit" value="Guardar" class="btn btn-outline-dark" />
-                <a href="@Url.Action("Index2", "Parqueaderoes")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index2", "Parqueaderoes")" class="btn btn-success">
                     <i class="icon-pencil icon-white"></i>
                     <span>
                         <strong>Regresar</strong>

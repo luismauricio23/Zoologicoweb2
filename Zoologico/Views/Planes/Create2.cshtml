@@ -3,17 +3,12 @@
     ViewBag.Title = "Create2";
     Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
-<style>
-
-    .form-group {
-        margin-left: 70px;
-    }
-</style>
+    <link href="~/Library/style/Workers.css" rel="stylesheet" />
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    <br />
     <div class="form-horizontal">
         <h2 class="text-center">Registrar Nuevo Plan</h2>
         <hr />
@@ -45,7 +40,7 @@
         <div class="form-group">
             <div class="col-md-offset-1 col-md-10">
                 <input type="submit" value="Guardar" class="btn btn-outline-dark" />
-                <a href="@Url.Action("Index2", "Planes")" class="btn btn-outline-dark">
+                <a href="@Url.Action("Index2", "Planes")" class="btn btn-success">
 
                     <i class="icon-pencil icon-white"></i>
 

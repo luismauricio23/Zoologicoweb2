@@ -6,12 +6,14 @@
     <title>@ViewBag.Title</title>
 
     <link href="~/Library/Bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Library/style/NabColor.css" rel="stylesheet" />
-
-    @RenderSection("Css", required: false)
-</head>
+    <style>
+        .mms {
+            background: #28a745;
+            color: #fff;
+        }
+    </style></head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark ">
+    <nav class="navbar navbar-expand-md navbar-dark  navbar-light bg-success ">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,7 +41,9 @@
                     <a class="nav-link " href="@Url.Action("Index2", "Vehiculoes")">Vehiculos</a>
                 </li>
             </ul>
-
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-success" href="@Url.Action("Index", "Home")">Salida </a>
+            </form>
         </div>
     </nav>
 

@@ -7,10 +7,10 @@
 }
     <link href="~/Library/style/Workers.css" rel="stylesheet" />
 
-
+<br />
 <h2 class="text-center">Trabajadores Registrados</h2>
 
-<a href="@Url.Action("Create", "Trabajadores")" class="btn btn-outline-dark mao">
+<a href="@Url.Action("Create", "Trabajadores")" class="btn btn-success mao">
     <i class="icon-pencil icon-white"></i>
     <span>
         <strong>Registrar Trabajadores</strong>
@@ -19,6 +19,7 @@
 
 <table class="table">
     <tr>
+        <th></th>
         <th>
             Cedula
         </th>
@@ -46,6 +47,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td></td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cedula_Trabajador)
             </td>
@@ -67,9 +69,9 @@
 
 
             <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.id_Trabajador }, new { @class = "btn btn-outline-info" })
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_Trabajador }, new { @class = "btn btn-outline-danger" })
-                @Html.ActionLink("Hoja de Vida", "Details", new { id = item.id_Trabajador }, new { @class = "btn btn-outline-primary" })
+                @Html.ActionLink("Editar", "Edit", new { id = item.id_Trabajador }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.id_Trabajador }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Hoja de Vida", "Details", new { id = item.id_Trabajador }, new { @class = "btn btn-success" })
             </td>
 
 

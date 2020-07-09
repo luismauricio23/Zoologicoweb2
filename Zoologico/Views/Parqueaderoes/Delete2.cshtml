@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_LayoutVistaVendedor.cshtml";
 }
 <link href="~/Library/style/Workers.css" rel="stylesheet" />
-
+<br />
 <img src="~/Library/Imagenes/warning.png" class="float" height="120" width="120">
 <div class="alert alert-warning col-md-4 t">
     <strong>Peligro!</strong> Esta seguro que quiere eliminar esto
@@ -38,8 +38,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-dark" />
-            @Html.ActionLink("Regresar", "Index2", new { id = Model.Id_Parqueadero }, new { @class = "btn btn-outline-info" })
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Regresar", "Index2", new { id = Model.Id_Parqueadero }, new { @class = "btn btn-success" })
         </div>
     }
 
